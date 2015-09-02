@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimplotFields" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="SimplotFields" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,12 +15,31 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-dI-3uK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mvz-F8-7fm"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gKc-dI-3uK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G5E-MB-csw"/>
+                            <constraint firstItem="gKc-dI-3uK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="aMf-IJ-OJK"/>
+                            <constraint firstItem="gKc-dI-3uK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mX0-yJ-h0h"/>
+                            <constraint firstAttribute="trailing" secondItem="gKc-dI-3uK" secondAttribute="trailing" id="xqY-CS-WTg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="gKc-dI-3uK" id="I9E-1D-5Cm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="365"/>
         </scene>
     </scenes>
 </document>

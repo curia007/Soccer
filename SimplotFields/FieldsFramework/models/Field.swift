@@ -9,25 +9,20 @@
 import UIKit
 
 import CoreLocation
+import MapKit
 
 public class Field
 {
-    let midCoordinate: CLLocationCoordinate2D?
-    let overlayTopLeftCoordinate: CLLocationCoordinate2D?
-    let overlayTopRightCoordinate: CLLocationCoordinate2D?
-    let overlayBottomLeftCoordinate: CLLocationCoordinate2D?
-    let overlayBottomRightCoordinate: CLLocationCoordinate2D?
+    public let midCoordinate: CLLocationCoordinate2D?
+    public let overlayTopLeftCoordinate: CLLocationCoordinate2D?
+    public let overlayTopRightCoordinate: CLLocationCoordinate2D?
+    public let overlayBottomLeftCoordinate: CLLocationCoordinate2D?
+    public let overlayBottomRightCoordinate: CLLocationCoordinate2D?
     
     let boundary: [CLLocationCoordinate2D]?
     let boundaryPointCount: Int
     
-    /*
-    CLLocationCoordinate2D *boundary;
-    NSInteger boundaryPointsCount;
-    
-    
-    @property (nonatomic, readonly) MKMapRect overlayBoundingMapRect;
-    */
+    public var overlayBoundingMapRect: MKMapRect?
     
     public init (_ filename: String)
     {
@@ -89,6 +84,14 @@ public class Field
 
             }
             
+            self.overlayBoundingMapRect = {
+                let topLeft: MKMapPoint = MKMapPointForCoordinate(self.overlayBottomLeftCoordinate!)
+                let topRight: MKMapPoint = MKMapPointForCoordinate(self.overlayTopRightCoordinate!)
+                let bottomLeft: MKMapPoint = MKMapPointForCoordinate(self.overlayBottomLeftCoordinate!)
+                
+                return MKMapRectMake(topLeft.x, topLeft.y, fabs(topLeft.x - topRight.x), fabs(topLeft.y - bottomLeft.y))
+            }()
+            
             return
         }
         
@@ -100,7 +103,8 @@ public class Field
         
         self.boundary = nil
         self.boundaryPointCount = 0
-
+        
+        self.overlayBoundingMapRect = nil
     }
 
 }

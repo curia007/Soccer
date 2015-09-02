@@ -8,18 +8,22 @@
 
 import UIKit
 
+import MapKit
+
 import FieldsFramework
 
-class MapViewController: UIViewController
+class MapViewController: UIViewController, MKMapViewDelegate
 {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // TEST
-        let simplotField: Field = Field("Simplot")
+        //let simplotField: Field = Field("Simplot")
     }
 
     override func didReceiveMemoryWarning()
@@ -29,5 +33,17 @@ class MapViewController: UIViewController
     }
 
 
+    // MARK: - MKMapViewDelegate functions
+/*
+    func mapView(mapView: MKMapView, viewForOverlay overlay: MKOverlay) -> MKOverlayView
+    {
+        
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        
+    }
+*/
 }
 

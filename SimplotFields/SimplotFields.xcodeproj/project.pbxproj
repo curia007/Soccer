@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C02188201B97760200D6D854 /* FieldMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayView.swift */; settings = {ASSET_TAGS = (); }; };
+		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; settings = {ASSET_TAGS = (); }; };
 		C0784EC01B968F16006CD1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */; };
 		C0784EC21B968F16006CD1E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EC11B968F16006CD1E5 /* MapViewController.swift */; };
@@ -24,6 +24,7 @@
 		C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
+		C0A394981B979F0A00E885F9 /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0A394971B979F0A00E885F9 /* MagicMountain.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C021881E1B97760200D6D854 /* FieldMapOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlayView.swift; path = overlays/FieldMapOverlayView.swift; sourceTree = "<group>"; };
+		C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlayRenderer.swift; path = overlays/FieldMapOverlayRenderer.swift; sourceTree = "<group>"; };
 		C021881F1B97760200D6D854 /* FieldMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlay.swift; path = overlays/FieldMapOverlay.swift; sourceTree = "<group>"; };
 		C0784EBC1B968F16006CD1E5 /* SimplotFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplotFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsFrameworkTests.swift; sourceTree = "<group>"; };
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
+		C0A394971B979F0A00E885F9 /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,7 @@
 		C021881D1B9775F300D6D854 /* Overlays */ = {
 			isa = PBXGroup;
 			children = (
-				C021881E1B97760200D6D854 /* FieldMapOverlayView.swift */,
+				C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */,
 				C021881F1B97760200D6D854 /* FieldMapOverlay.swift */,
 			);
 			name = Overlays;
@@ -214,6 +216,7 @@
 		C0784EF01B96924F006CD1E5 /* Field Information */ = {
 			isa = PBXGroup;
 			children = (
+				C0A394971B979F0A00E885F9 /* MagicMountain.plist */,
 				C0784EF11B969293006CD1E5 /* Simplot.plist */,
 			);
 			name = "Field Information";
@@ -446,6 +449,7 @@
 				C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */,
 				C0784ECA1B968F16006CD1E5 /* Assets.xcassets in Resources */,
 				C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */,
+				C0A394981B979F0A00E885F9 /* MagicMountain.plist in Resources */,
 				C0784EF21B969293006CD1E5 /* Simplot.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C094D8CD1B973605000D8B21 /* Field.swift in Sources */,
-				C02188201B97760200D6D854 /* FieldMapOverlayView.swift in Sources */,
+				C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */,
 				C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -676,6 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -741,6 +747,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FieldsFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.FieldsFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -762,6 +769,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FieldsFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.FieldsFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";

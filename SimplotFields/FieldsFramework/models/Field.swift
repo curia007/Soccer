@@ -8,103 +8,71 @@
 
 import UIKit
 
-import CoreLocation
 import MapKit
 
 public class Field
 {
-    public let midCoordinate: CLLocationCoordinate2D?
-    public let overlayTopLeftCoordinate: CLLocationCoordinate2D?
-    public let overlayTopRightCoordinate: CLLocationCoordinate2D?
-    public let overlayBottomLeftCoordinate: CLLocationCoordinate2D?
-    public let overlayBottomRightCoordinate: CLLocationCoordinate2D?
+    public var boundary: [CLLocationCoordinate2D]
+    public var boundaryPointsCount: NSInteger
     
-    let boundary: [CLLocationCoordinate2D]?
-    let boundaryPointCount: Int
-    
-    public var overlayBoundingMapRect: MKMapRect?
-    
-    public init (_ filename: String)
-    {
-        let filePath: String? = NSBundle.mainBundle().pathForResource(filename, ofType: "plist")
-        
-        if (filePath != nil)
-        {
-            debugPrint("\(__FUNCTION__):  filePath = \(filePath)")
-        
-            let properties: NSDictionary! = NSDictionary(contentsOfFile: filePath!)
-            
-            var point: CGPoint = CGPointFromString(properties["midCoordinate"] as! String)
-            
-            var x: NSNumber = NSNumber(float: Float(point.x))
-            var y: NSNumber = NSNumber(float: Float(point.y))
-            
-            self.midCoordinate = CLLocationCoordinate2DMake(x.doubleValue, y.doubleValue)
-            
-            point = CGPointFromString(properties["overlayTopLeftCoordate"] as! String)
-            
-            x = NSNumber(float: Float(point.x))
-            y = NSNumber(float: Float(point.y))
-            
-            self.overlayTopLeftCoordinate = CLLocationCoordinate2DMake(x.doubleValue, y.doubleValue)
-            
-            point = CGPointFromString(properties["overlayTopRigthCoordate"] as! String)
-            
-            x = NSNumber(float: Float(point.x))
-            y = NSNumber(float: Float(point.y))
-            
-            self.overlayTopRightCoordinate = CLLocationCoordinate2DMake(x.doubleValue, y.doubleValue)
-            
-            point = CGPointFromString(properties["overlayBottomLeftCoordate"] as! String)
-            
-            x = NSNumber(float: Float(point.x))
-            y = NSNumber(float: Float(point.y))
-            
-            self.overlayBottomLeftCoordinate = CLLocationCoordinate2DMake(x.doubleValue, y.doubleValue)
-            
-            point = CGPointFromString(properties["overlayBottomRightCoordate"] as! String)
-            
-            x = NSNumber(float: Float(point.x))
-            y = NSNumber(float: Float(point.y))
-            
-            self.overlayBottomRightCoordinate = CLLocationCoordinate2DMake(x.doubleValue, y.doubleValue)
-            
-            self.boundary = nil
-
-            let boundaryPoints:[String] = properties["boundary"] as! [String]
-            self.boundaryPointCount = boundaryPoints.count
-            
-            for (var i:Int = 0; i < self.boundaryPointCount; i++)
-            {
-                let p: CGPoint = CGPointFromString(boundaryPoints[i])
-                let pX: NSNumber = NSNumber(float: Float(p.x))
-                let pY: NSNumber = NSNumber(float: Float(p.y))
-                
-                self.boundary?.append(CLLocationCoordinate2DMake(pX.doubleValue, pY.doubleValue))
-
-            }
-            
-            self.overlayBoundingMapRect = {
-                let topLeft: MKMapPoint = MKMapPointForCoordinate(self.overlayBottomLeftCoordinate!)
-                let topRight: MKMapPoint = MKMapPointForCoordinate(self.overlayTopRightCoordinate!)
-                let bottomLeft: MKMapPoint = MKMapPointForCoordinate(self.overlayBottomLeftCoordinate!)
-                
-                return MKMapRectMake(topLeft.x, topLeft.y, fabs(topLeft.x - topRight.x), fabs(topLeft.y - bottomLeft.y))
-            }()
-            
-            return
+    public var midCoordinate: CLLocationCoordinate2D
+    public var overlayTopLeftCoordinate: CLLocationCoordinate2D
+    public var overlayTopRightCoordinate: CLLocationCoordinate2D
+    public var overlayBottomLeftCoordinate: CLLocationCoordinate2D
+    public var overlayBottomRightCoordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2DMake(overlayBottomLeftCoordinate.latitude,
+                overlayTopRightCoordinate.longitude)
         }
-        
-        self.midCoordinate = nil
-        self.overlayTopLeftCoordinate = nil
-        self.overlayTopRightCoordinate = nil
-        self.overlayBottomLeftCoordinate = nil
-        self.overlayBottomRightCoordinate = nil
-        
-        self.boundary = nil
-        self.boundaryPointCount = 0
-        
-        self.overlayBoundingMapRect = nil
     }
-
+    
+    public var overlayBoundingMapRect: MKMapRect {
+        get {
+            let topLeft = MKMapPointForCoordinate(overlayTopLeftCoordinate);
+            let topRight = MKMapPointForCoordinate(overlayTopRightCoordinate);
+            let bottomLeft = MKMapPointForCoordinate(overlayBottomLeftCoordinate);
+            
+            return MKMapRectMake(topLeft.x,
+                topLeft.y,
+                fabs(topLeft.x-topRight.x),
+                fabs(topLeft.y - bottomLeft.y))
+        }
+    }
+    
+    var name: String?
+    
+    public init(_ filename: String)
+    {
+        let filePath = NSBundle.mainBundle().pathForResource(filename, ofType: "plist")
+        let properties = NSDictionary(contentsOfFile: filePath!)
+        
+        let midPoint = CGPointFromString(properties!["midCoordinate"] as! String)
+        midCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(midPoint.x), CLLocationDegrees(midPoint.y))
+        
+        let overlayTopLeftPoint = CGPointFromString(properties!["overlayTopLeftCoordinate"] as! String)
+        overlayTopLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopLeftPoint.x),
+            CLLocationDegrees(overlayTopLeftPoint.y))
+        
+        let overlayTopRightPoint = CGPointFromString(properties!["overlayTopRightCoordinate"] as! String)
+        overlayTopRightCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopRightPoint.x),
+            CLLocationDegrees(overlayTopRightPoint.y))
+        
+        let overlayBottomLeftPoint = CGPointFromString(properties!["overlayBottomLeftCoordinate"] as! String)
+        overlayBottomLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayBottomLeftPoint.x),
+            CLLocationDegrees(overlayBottomLeftPoint.y))
+        
+        let boundaryPoints = properties!["boundary"] as! NSArray
+        
+        boundaryPointsCount = boundaryPoints.count
+        
+        boundary = []
+        
+        for i in 0...boundaryPointsCount-1 {
+            let p = CGPointFromString(boundaryPoints[i] as! String)
+            boundary += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
+        }
+    }
+    
 }
+
+

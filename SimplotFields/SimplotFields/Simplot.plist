@@ -3,18 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>overlayTopLeftCoordinate</key>
-	<string></string>
+	<string>{43.546737000	,-116.147083000}</string>
 	<key>overlayTopRightCoordinate</key>
-	<string></string>
+	<string>{43.546737,-116.147083}</string>
 	<key>overlayBottomLeftCoordinate</key>
-	<string></string>
+	<string>{43.551237311, -116.147083000}</string>
 	<key>overlayBottomRightCoordinate</key>
-	<string></string>
+	<string>{43.5512373,-116.147083}</string>
 	<key>midCoordinate</key>
-	<string></string>
+	<string>{43.546737, -116.147083}</string>
 	<key>boundary</key>
 	<array>
-		<string></string>
+		<string>{43.547337000,-116.147083000}</string>
+		<string>{43.547187000,	-116.147083000}</string>
+		<string>{43.547037000,-116.147083000}</string>
+		<string>{43.546887000,-116.147083000}</string>
+		<string>{43.546737000, -116.147083000}</string>
 	</array>
 </dict>
 </plist>

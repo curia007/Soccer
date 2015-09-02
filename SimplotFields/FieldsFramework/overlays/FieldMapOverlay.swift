@@ -15,9 +15,9 @@ public class FieldMapOverlay: NSObject, MKOverlay
     public var coordinate: CLLocationCoordinate2D
     public var boundingMapRect: MKMapRect
     
-    init(_ field: Field)
+    public init(_ field: Field)
     {
-        self.coordinate = field.midCoordinate!
-        self.boundingMapRect = field.overlayBoundingMapRect!
+        self.coordinate = field.midCoordinate
+        self.boundingMapRect = field.overlayBoundingMapRect
     }
 }

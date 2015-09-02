@@ -17,13 +17,38 @@ class MapViewController: UIViewController, MKMapViewDelegate
 
     @IBOutlet weak var mapView: MKMapView!
     
+    private let fieldMapOverlayRenderer: FieldMapOverlayRenderer = {
+    
+        let fieldImage: UIImage = UIImage(named: "simplot_complex_map")!
+        
+        let field:Field = Field("MagicMountain")
+        
+        let overlay: FieldMapOverlay = FieldMapOverlay(field)
+        
+        return FieldMapOverlayRenderer(overlay, image: fieldImage)
+    }()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         // TEST
-        //let simplotField: Field = Field("Simplot")
+        let park: Field = Field("MagicMountain")
+        
+        ///let latDelta = park.overlayTopLeftCoordinate.latitude -
+            park.overlayBottomRightCoordinate.latitude
+        
+        // think of a span as a tv size, measure from one corner to another
+        //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        
+        //let region = MKCoordinateRegionMake(park.midCoordinate, span)
+        
+        //mapView.region = region
+
+        
+        self.mapView.addOverlay(self.fieldMapOverlayRenderer.overlay as! FieldMapOverlay)
     }
 
     override func didReceiveMemoryWarning()
@@ -34,16 +59,25 @@ class MapViewController: UIViewController, MKMapViewDelegate
 
 
     // MARK: - MKMapViewDelegate functions
-/*
-    func mapView(mapView: MKMapView, viewForOverlay overlay: MKOverlay) -> MKOverlayView
+
+    func mapView(mapView: MKMapView, didAddOverlayRenderers renderers: [MKOverlayRenderer])
     {
         
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer
     {
+        if overlay is FieldMapOverlay
+        {
+            let fieldImage: UIImage = UIImage(named: "simplot_complex_map")!
+            let field:Field = Field("MagicMountain")
+            let overlay: FieldMapOverlay = FieldMapOverlay(field)
+            
+            return FieldMapOverlayRenderer(overlay, image: fieldImage)
+        }
         
+        return MKOverlayRenderer()
     }
-*/
+
 }
 

@@ -48,6 +48,16 @@
                ReferencedContainer = "container:SimplotFields.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C094D8B21B9733DC000D8B21"
+               BuildableName = "FieldsFrameworkTests.xctest"
+               BlueprintName = "FieldsFrameworkTests"
+               ReferencedContainer = "container:SimplotFields.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

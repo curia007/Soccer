@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FieldsFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>SimplotFields.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>C0784EDD1B968F16006CD1E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C094D8A91B9733DC000D8B21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C094D8B21B9733DC000D8B21</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,7 @@ import MapKit
 
 public class FieldMapOverlayRenderer: MKOverlayRenderer
 {
-    let overlayImage: UIImage?
+    let overlayImage: UIImage
     
     public init(_ overlay: MKOverlay, image: UIImage)
     {
@@ -22,7 +22,7 @@ public class FieldMapOverlayRenderer: MKOverlayRenderer
     
     public override func drawMapRect(mapRect: MKMapRect, zoomScale: MKZoomScale, inContext context: CGContext)
     {
-        let imageReference: CGImageRef = (self.overlayImage?.CGImage)!
+        let imageReference: CGImage = self.overlayImage.CGImage!
         let mapRect: MKMapRect = self.overlay.boundingMapRect
         let rect:CGRect = self.rectForMapRect(mapRect)
         

@@ -3,22 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>overlayTopLeftCoordinate</key>
-	<string>{43.546737000	,-116.147083000}</string>
+	<string>{ 43.551301,-116.153748}</string>
 	<key>overlayTopRightCoordinate</key>
-	<string>{43.546737,-116.147083}</string>
+	<string>{43.551005,-116.139779}</string>
 	<key>overlayBottomLeftCoordinate</key>
-	<string>{43.551237311, -116.147083000}</string>
-	<key>overlayBottomRightCoordinate</key>
-	<string>{43.5512373,-116.147083}</string>
+	<string>{43.543198,-116.153769}</string>
 	<key>midCoordinate</key>
-	<string>{43.546737, -116.147083}</string>
+	<string>{43.547895,-116.149006}</string>
 	<key>boundary</key>
 	<array>
-		<string>{43.547337000,-116.147083000}</string>
-		<string>{43.547187000,	-116.147083000}</string>
-		<string>{43.547037000,-116.147083000}</string>
-		<string>{43.546887000,-116.147083000}</string>
-		<string>{43.546737000, -116.147083000}</string>
+		<string>{43.5500100,-116.1446500}</string>
+		<string>{43.5510053,-116.1478043}</string>
+		<string>{43.5510831,-116.1494243}</string>
+		<string>{43.5506943,-116.1509156}</string>
+		<string>{43.5495357,-116.1531794}</string>
+		<string>{43.5471950,-116.1535549}</string>
+		<string>{43.5459664,-116.1535549}</string>
+		<string>{43.5463085,-116.1535549}</string>
+		<string>{43.5451576,-116.1533403}</string>
+		<string>{43.5447377,-116.1524606}</string>
+		<string>{43.5443177,-116.1519241}</string>
+		<string>{43.5434312,-116.1491990}</string>
+		<string>{43.5443644,-116.1462593}</string>
+		<string>{43.5443644,-116.1447787}</string>
+		<string>{43.5446444,-116.1429548}</string>
+		<string>{43.5448932,-116.1416245}</string>
+		<string>{43.5454998,-116.1408520}</string>
+		<string>{43.5467440,-116.1406374}</string>
+		<string>{43.5472106,-116.1412811}</string>
+		<string>{43.5481904,-116.1414313}</string>
+		<string>{43.5490769,-116.1410451}</string>
+		<string>{43.5492791,-116.1413240}</string>
+		<string>{43.5493413,-116.1414099}</string>
+		<string>{43.5499323,-116.1436200}</string>
+		<string>{43.5500411,-116.1446285}</string>
 	</array>
 </dict>
 </plist>

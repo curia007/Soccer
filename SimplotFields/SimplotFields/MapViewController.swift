@@ -16,18 +16,7 @@ class MapViewController: UIViewController, MKMapViewDelegate
 {
 
     @IBOutlet weak var mapView: MKMapView!
-    
-    private let fieldMapOverlayRenderer: FieldMapOverlayRenderer = {
-    
-        let fieldImage: UIImage = UIImage(named: "simplot_complex_map")!
-        
-        let field:Field = Field("MagicMountain")
-        
-        let overlay: FieldMapOverlay = FieldMapOverlay(field)
-        
-        return FieldMapOverlayRenderer(overlay, image: fieldImage)
-    }()
-    
+  
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,18 +26,19 @@ class MapViewController: UIViewController, MKMapViewDelegate
         // TEST
         let park: Field = Field("MagicMountain")
         
-        ///let latDelta = park.overlayTopLeftCoordinate.latitude -
+        let latDelta = park.overlayTopLeftCoordinate.latitude -
             park.overlayBottomRightCoordinate.latitude
         
         // think of a span as a tv size, measure from one corner to another
-        //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
         
-        //let region = MKCoordinateRegionMake(park.midCoordinate, span)
+        let region = MKCoordinateRegionMake(park.midCoordinate, span)
         
-        //mapView.region = region
-
+        mapView.region = region
         
-        self.mapView.addOverlay(self.fieldMapOverlayRenderer.overlay as! FieldMapOverlay)
+        let overlay: FieldMapOverlay = FieldMapOverlay(park)
+        
+        self.mapView.addOverlay(overlay)
     }
 
     override func didReceiveMemoryWarning()

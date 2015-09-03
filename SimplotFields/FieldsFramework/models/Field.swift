@@ -19,6 +19,7 @@ public class Field
     public var overlayTopLeftCoordinate: CLLocationCoordinate2D
     public var overlayTopRightCoordinate: CLLocationCoordinate2D
     public var overlayBottomLeftCoordinate: CLLocationCoordinate2D
+    
     public var overlayBottomRightCoordinate: CLLocationCoordinate2D {
         get {
             return CLLocationCoordinate2DMake(overlayBottomLeftCoordinate.latitude,
@@ -34,7 +35,7 @@ public class Field
             
             return MKMapRectMake(topLeft.x,
                 topLeft.y,
-                fabs(topLeft.x-topRight.x),
+                fabs(topLeft.x - topRight.x),
                 fabs(topLeft.y - bottomLeft.y))
         }
     }
@@ -60,14 +61,15 @@ public class Field
         let overlayBottomLeftPoint = CGPointFromString(properties!["overlayBottomLeftCoordinate"] as! String)
         overlayBottomLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayBottomLeftPoint.x),
             CLLocationDegrees(overlayBottomLeftPoint.y))
-        
+
         let boundaryPoints = properties!["boundary"] as! NSArray
         
         boundaryPointsCount = boundaryPoints.count
         
         boundary = []
         
-        for i in 0...boundaryPointsCount-1 {
+        for i in 0...boundaryPointsCount-1
+        {
             let p = CGPointFromString(boundaryPoints[i] as! String)
             boundary += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
         }

@@ -25,6 +25,7 @@
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
 		C0A394981B979F0A00E885F9 /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0A394971B979F0A00E885F9 /* MagicMountain.plist */; settings = {ASSET_TAGS = (); }; };
+		C0DC96AF1B980D5800FA4542 /* Simplot2.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot2.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
 		C0A394971B979F0A00E885F9 /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
+		C0DC96AE1B980D5800FA4542 /* Simplot2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot2.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			children = (
 				C0A394971B979F0A00E885F9 /* MagicMountain.plist */,
 				C0784EF11B969293006CD1E5 /* Simplot.plist */,
+				C0DC96AE1B980D5800FA4542 /* Simplot2.plist */,
 			);
 			name = "Field Information";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				TargetAttributes = {
 					C0784EBB1B968F16006CD1E5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 32SL43PW6T;
 					};
 					C0784ED21B968F16006CD1E5 = {
 						CreatedOnToolsVersion = 7.0;
@@ -412,6 +416,7 @@
 					};
 					C094D8A91B9733DC000D8B21 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 32SL43PW6T;
 					};
 					C094D8B21B9733DC000D8B21 = {
 						CreatedOnToolsVersion = 7.0;
@@ -446,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DC96AF1B980D5800FA4542 /* Simplot2.plist in Resources */,
 				C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */,
 				C0784ECA1B968F16006CD1E5 /* Assets.xcassets in Resources */,
 				C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */,
@@ -666,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -679,6 +686,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -740,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -762,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

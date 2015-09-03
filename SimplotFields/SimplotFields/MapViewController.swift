@@ -24,17 +24,17 @@ class MapViewController: UIViewController, MKMapViewDelegate
         // Do any additional setup after loading the view, typically from a nib.
         
         // TEST
-        let park: Field = Field("MagicMountain")
+        let park: Field = Field("Simplot")
         
         let latDelta = park.overlayTopLeftCoordinate.latitude -
-            park.overlayBottomRightCoordinate.latitude
+            park.overlayBottomRightCoordinate.latitude + 0.05
         
         // think of a span as a tv size, measure from one corner to another
         let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
         
         let region = MKCoordinateRegionMake(park.midCoordinate, span)
         
-        mapView.region = region
+        self.mapView.region = region
         
         let overlay: FieldMapOverlay = FieldMapOverlay(park)
         
@@ -60,7 +60,7 @@ class MapViewController: UIViewController, MKMapViewDelegate
         if overlay is FieldMapOverlay
         {
             let fieldImage: UIImage = UIImage(named: "simplot_complex_map")!
-            let field:Field = Field("MagicMountain")
+            let field:Field = Field("Simplot")
             let overlay: FieldMapOverlay = FieldMapOverlay(field)
             
             return FieldMapOverlayRenderer(overlay, image: fieldImage)

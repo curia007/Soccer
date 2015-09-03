@@ -3,40 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>overlayTopLeftCoordinate</key>
-	<string>{ 43.551301,-116.153748}</string>
+	<string>{43.550788,-116.155443}</string>
 	<key>overlayTopRightCoordinate</key>
-	<string>{43.551005,-116.139779}</string>
+	<string>{43.5510053,-116.1397791}</string>
 	<key>overlayBottomLeftCoordinate</key>
-	<string>{43.543198,-116.153769}</string>
+	<string>{43.5431979,-116.1537695}</string>
 	<key>midCoordinate</key>
-	<string>{43.547895,-116.149006}</string>
+	<string>{43.547646,-116.147847}</string>
 	<key>boundary</key>
 	<array>
-		<string>{43.5500100,-116.1446500}</string>
-		<string>{43.5510053,-116.1478043}</string>
-		<string>{43.5510831,-116.1494243}</string>
-		<string>{43.5506943,-116.1509156}</string>
-		<string>{43.5495357,-116.1531794}</string>
-		<string>{43.5471950,-116.1535549}</string>
-		<string>{43.5459664,-116.1535549}</string>
-		<string>{43.5463085,-116.1535549}</string>
-		<string>{43.5451576,-116.1533403}</string>
-		<string>{43.5447377,-116.1524606}</string>
-		<string>{43.5443177,-116.1519241}</string>
-		<string>{43.5434312,-116.1491990}</string>
-		<string>{43.5443644,-116.1462593}</string>
-		<string>{43.5443644,-116.1447787}</string>
-		<string>{43.5446444,-116.1429548}</string>
-		<string>{43.5448932,-116.1416245}</string>
-		<string>{43.5454998,-116.1408520}</string>
-		<string>{43.5467440,-116.1406374}</string>
-		<string>{43.5472106,-116.1412811}</string>
-		<string>{43.5481904,-116.1414313}</string>
-		<string>{43.5490769,-116.1410451}</string>
-		<string>{43.5492791,-116.1413240}</string>
-		<string>{43.5493413,-116.1414099}</string>
-		<string>{43.5499323,-116.1436200}</string>
-		<string>{43.5500411,-116.1446285}</string>
+		<string>{43.5482993,-116.1414}</string>
+		<string>{43.5490769,-116.1410}</string>
+		<string>{43.5499789,-116.1444569}</string>
+		<string>{43.5509120,-116.1471605}</string>
+		<string>{43.5509742,-116.1502934}</string>
+		<string>{43.5499167,-116.1527395}</string>
+		<string>{43.5489214,-116.1534262}</string>
+		<string>{43.5481437,-116.1536407}</string>
+		<string>{43.5473661,-116.1534262}</string>
+		<string>{43.5466507,-116.1533833}</string>
+		<string>{43.5459664,-116.1515379}</string>
+		<string>{43.5458419,-116.1503792}</string>
+		<string>{43.5450021,-116.1502504}</string>
+		<string>{43.5444733,-116.1497784}</string>
+		<string>{43.5442244,-116.1484909}</string>
+		<string>{43.5444733,-116.1470318}</string>
+		<string>{43.5445044,-116.1457443}</string>
+		<string>{43.5449399,-116.1420965}</string>
+		<string>{43.5461530,-116.1408520}</string>
+		<string>{43.5455620,-116.1409807}</string>
+		<string>{43.5467751,-116.1408520}</string>
+		<string>{43.5472728,-116.1412382}</string>
+		<string>{43.5477705,-116.1414528}</string>
 	</array>
 </dict>
 </plist>

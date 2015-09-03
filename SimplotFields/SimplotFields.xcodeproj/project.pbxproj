@@ -17,15 +17,13 @@
 		C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0784ECB1B968F16006CD1E5 /* LaunchScreen.storyboard */; };
 		C0784ED81B968F16006CD1E5 /* SimplotFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784ED71B968F16006CD1E5 /* SimplotFieldsTests.swift */; };
 		C0784EE31B968F16006CD1E5 /* SimplotFieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EE21B968F16006CD1E5 /* SimplotFieldsUITests.swift */; };
-		C0784EF21B969293006CD1E5 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0784EF11B969293006CD1E5 /* Simplot.plist */; settings = {ASSET_TAGS = (); }; };
 		C094D8AD1B9733DC000D8B21 /* FieldsFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C094D8B41B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ASSET_TAGS = (); }; };
 		C094D8BB1B9733DC000D8B21 /* FieldsFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */; };
 		C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
-		C0A394981B979F0A00E885F9 /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0A394971B979F0A00E885F9 /* MagicMountain.plist */; settings = {ASSET_TAGS = (); }; };
-		C0DC96AF1B980D5800FA4542 /* Simplot2.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot2.plist */; settings = {ASSET_TAGS = (); }; };
+		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +95,6 @@
 		C0784EDE1B968F16006CD1E5 /* SimplotFieldsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplotFieldsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0784EE21B968F16006CD1E5 /* SimplotFieldsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplotFieldsUITests.swift; sourceTree = "<group>"; };
 		C0784EE41B968F16006CD1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0784EF11B969293006CD1E5 /* Simplot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot.plist; sourceTree = "<group>"; };
 		C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FieldsFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldsFramework.h; sourceTree = "<group>"; };
 		C094D8AE1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,8 +102,7 @@
 		C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsFrameworkTests.swift; sourceTree = "<group>"; };
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
-		C0A394971B979F0A00E885F9 /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
-		C0DC96AE1B980D5800FA4542 /* Simplot2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot2.plist; sourceTree = "<group>"; };
+		C0DC96AE1B980D5800FA4542 /* Simplot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,9 +214,7 @@
 		C0784EF01B96924F006CD1E5 /* Field Information */ = {
 			isa = PBXGroup;
 			children = (
-				C0A394971B979F0A00E885F9 /* MagicMountain.plist */,
-				C0784EF11B969293006CD1E5 /* Simplot.plist */,
-				C0DC96AE1B980D5800FA4542 /* Simplot2.plist */,
+				C0DC96AE1B980D5800FA4542 /* Simplot.plist */,
 			);
 			name = "Field Information";
 			sourceTree = "<group>";
@@ -451,12 +445,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0DC96AF1B980D5800FA4542 /* Simplot2.plist in Resources */,
+				C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */,
 				C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */,
 				C0784ECA1B968F16006CD1E5 /* Assets.xcassets in Resources */,
 				C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */,
-				C0A394981B979F0A00E885F9 /* MagicMountain.plist in Resources */,
-				C0784EF21B969293006CD1E5 /* Simplot.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,33 +9,41 @@
 import UIKit
 
 import MapKit
+import CoreLocation
 
 import FieldsFramework
 
-class MapViewController: UIViewController, MKMapViewDelegate
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
 {
 
     @IBOutlet weak var mapView: MKMapView!
   
+    private let locationManager:CLLocationManager = CLLocationManager()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        self.locationManager.delegate = self
         
-        // TEST
+        // retrieve babysitter location
+        let authorizationStatus:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+        
+        if ((authorizationStatus == .Denied) ||
+            (authorizationStatus == .Restricted) ||
+            (authorizationStatus == .NotDetermined))
+            
+        {
+            self.locationManager.requestAlwaysAuthorization()
+        }
+
+        
+        
         let park: Field = Field("Simplot")
         
-        let latDelta = park.overlayTopLeftCoordinate.latitude -
-            park.overlayBottomRightCoordinate.latitude + 0.05
-        
-        // think of a span as a tv size, measure from one corner to another
-        let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
-        
-        let region = MKCoordinateRegionMake(park.midCoordinate, span)
-        
-        self.mapView.region = region
-        
+        // handle map span
+       
         let overlay: FieldMapOverlay = FieldMapOverlay(park)
         
         self.mapView.addOverlay(overlay)
@@ -50,6 +58,14 @@ class MapViewController: UIViewController, MKMapViewDelegate
 
     // MARK: - MKMapViewDelegate functions
 
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation)
+    {
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+        
+        self.mapView.region = region
+    }
+    
     func mapView(mapView: MKMapView, didAddOverlayRenderers renderers: [MKOverlayRenderer])
     {
         

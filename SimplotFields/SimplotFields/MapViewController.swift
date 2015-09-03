@@ -18,7 +18,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var mapView: MKMapView!
   
+    private let fieldLocations: [String : String] = {
+     
+        // Initial load of field positions
+        let filePath = NSBundle.mainBundle().pathForResource("FieldLocations", ofType: "plist")
+        return NSDictionary(contentsOfFile: filePath!) as! [String : String]
+    }()
+
     private let locationManager:CLLocationManager = CLLocationManager()
+    
+    private var isInitialLocation: Bool = true
     
     override func viewDidLoad()
     {
@@ -38,8 +47,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.locationManager.requestAlwaysAuthorization()
         }
 
-        
-        
         let park: Field = Field("Simplot")
         
         // handle map span
@@ -47,6 +54,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let overlay: FieldMapOverlay = FieldMapOverlay(park)
         
         self.mapView.addOverlay(overlay)
+        
+        self.addFieldAnnotation("Field 5", match: "Nationals .vs Rush", description: "Third Match")
     }
 
     override func didReceiveMemoryWarning()
@@ -55,15 +64,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - private functions
+    
+    private func addFieldAnnotation(fieldName: String, match: String, description: String)
+    {
+        let stringCoordinates: String = self.fieldLocations[fieldName]!
+        
+        let fieldPoint = CGPointFromString(stringCoordinates)
+        let fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        
+        let fieldAnnotation: FieldAnnotation = FieldAnnotation(fieldCoordinate, title: match, subtitle: description, fieldName: fieldName )
+        
+        self.mapView.addAnnotation(fieldAnnotation)
+        
+    }
 
     // MARK: - MKMapViewDelegate functions
 
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation)
     {
-        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+        if (self.isInitialLocation == true)
+        {
+            let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
         
-        self.mapView.region = region
+            self.mapView.setRegion(region, animated: true)
+            
+            self.isInitialLocation = false
+        }
     }
     
     func mapView(mapView: MKMapView, didAddOverlayRenderers renderers: [MKOverlayRenderer])

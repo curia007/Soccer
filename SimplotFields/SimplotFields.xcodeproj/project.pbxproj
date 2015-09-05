@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; settings = {ASSET_TAGS = (); }; };
-		C05A440E1B99044100C9D254 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05A440D1B99044100C9D254 /* MapKit.framework */; };
+		C02746721B9A3BC5002CA2FE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746711B9A3BC5002CA2FE /* Bolts.framework */; };
+		C02746741B9A40FA002CA2FE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746731B9A40FA002CA2FE /* Parse.framework */; };
+		C02746761B9A42A6002CA2FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746751B9A42A6002CA2FE /* libsqlite3.tbd */; };
+		C027467A1B9A42EA002CA2FE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746781B9A42EA002CA2FE /* SystemConfiguration.framework */; };
+		C027467C1B9A430B002CA2FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C027467B1B9A430B002CA2FE /* AudioToolbox.framework */; };
 		C0784EC01B968F16006CD1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */; };
 		C0784EC21B968F16006CD1E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EC11B968F16006CD1E5 /* MapViewController.swift */; };
 		C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0784EC31B968F16006CD1E5 /* Main.storyboard */; };
@@ -84,7 +88,13 @@
 /* Begin PBXFileReference section */
 		C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlayRenderer.swift; path = overlays/FieldMapOverlayRenderer.swift; sourceTree = "<group>"; };
 		C021881F1B97760200D6D854 /* FieldMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlay.swift; path = overlays/FieldMapOverlay.swift; sourceTree = "<group>"; };
-		C05A440D1B99044100C9D254 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C02746631B9A3088002CA2FE /* SimplotFields-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimplotFields-Bridging-Header.h"; sourceTree = "<group>"; };
+		C02746711B9A3BC5002CA2FE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../sdks/Bolts.framework; sourceTree = "<group>"; };
+		C02746731B9A40FA002CA2FE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../sdks/Parse.framework; sourceTree = "<group>"; };
+		C02746751B9A42A6002CA2FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C02746771B9A42EA002CA2FE /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		C02746781B9A42EA002CA2FE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C027467B1B9A430B002CA2FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C0784EBC1B968F16006CD1E5 /* SimplotFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplotFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0784EC11B968F16006CD1E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +126,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05A440E1B99044100C9D254 /* MapKit.framework in Frameworks */,
+				C027467C1B9A430B002CA2FE /* AudioToolbox.framework in Frameworks */,
+				C027467A1B9A42EA002CA2FE /* SystemConfiguration.framework in Frameworks */,
+				C02746761B9A42A6002CA2FE /* libsqlite3.tbd in Frameworks */,
+				C02746741B9A40FA002CA2FE /* Parse.framework in Frameworks */,
+				C02746721B9A3BC5002CA2FE /* Bolts.framework in Frameworks */,
 				C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +176,19 @@
 			name = Overlays;
 			sourceTree = "<group>";
 		};
+		C02746621B9A3046002CA2FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C027467B1B9A430B002CA2FE /* AudioToolbox.framework */,
+				C02746771B9A42EA002CA2FE /* AudioUnit.framework */,
+				C02746781B9A42EA002CA2FE /* SystemConfiguration.framework */,
+				C02746751B9A42A6002CA2FE /* libsqlite3.tbd */,
+				C02746731B9A40FA002CA2FE /* Parse.framework */,
+				C02746711B9A3BC5002CA2FE /* Bolts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C07093C81B98D3D800902BDA /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +199,7 @@
 		C0784EB31B968F16006CD1E5 = {
 			isa = PBXGroup;
 			children = (
-				C05A440D1B99044100C9D254 /* MapKit.framework */,
+				C02746621B9A3046002CA2FE /* Frameworks */,
 				C0784EBE1B968F16006CD1E5 /* SimplotFields */,
 				C0784ED61B968F16006CD1E5 /* SimplotFieldsTests */,
 				C0784EE11B968F16006CD1E5 /* SimplotFieldsUITests */,
@@ -205,6 +232,7 @@
 				C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */,
 				C0784EC91B968F16006CD1E5 /* Assets.xcassets */,
 				C0784ECE1B968F16006CD1E5 /* Info.plist */,
+				C02746631B9A3088002CA2FE /* SimplotFields-Bridging-Header.h */,
 			);
 			path = SimplotFields;
 			sourceTree = "<group>";
@@ -706,12 +734,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "/Users/curia/projects/sdks/parse-library";
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimplotFields/SimplotFields-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -722,12 +753,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimplotFields/SimplotFields-Bridging-Header.h";
 			};
 			name = Release;
 		};

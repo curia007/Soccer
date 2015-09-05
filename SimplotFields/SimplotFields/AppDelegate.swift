@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         // Override point for customization after application launch.
+        
+        self.setupUserNotificationActions()
+        
+        // start locating babysitter
+        Parse.setApplicationId("xjCTHk0lLTrDyCVzBQZDElyivece4dUYLqYpeJNt", clientKey: "4LjnzcomCgvvSagerROGPbop1dC9JSlQLeC04vYo")
+        
         return true
     }
 
@@ -48,6 +54,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+
+    // MARK: - Additional functions
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
+    {
+        debugPrint("\(__FUNCTION__):  deviceToken: \(deviceToken)")
+        
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings)
+    {
+        debugPrint("\(__FUNCTION__):: notificationSettings: \(notificationSettings)")
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void)
+    {
+        
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+    {
+        
+    }
+    
+    // MARK: - private functions
+    
+    private func setupUserNotificationActions()
+    {
+        let acceptNotificationAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        
+        acceptNotificationAction.title = NSLocalizedString("Accept", comment: "Accept client")
+        acceptNotificationAction.identifier = "accept"
+        acceptNotificationAction.activationMode = UIUserNotificationActivationMode.Background
+        acceptNotificationAction.authenticationRequired = false
+        
+        let declineNotificationAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        
+        declineNotificationAction.title = NSLocalizedString("Decline", comment: "Decline client")
+        declineNotificationAction.identifier = "decline"
+        declineNotificationAction.activationMode = UIUserNotificationActivationMode.Background
+        declineNotificationAction.authenticationRequired = false
+        
+        let clientNotifcationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        clientNotifcationCategory.identifier = "ClientNearNotificationCategory"
+        
+        clientNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Default)
+        
+        //clientNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal)
+        
+        let jobNotifcationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        clientNotifcationCategory.identifier = "BabysittingJobNotificationCategory"
+        
+        jobNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Default )
+        
+        //jobNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal )
+        
+        let categories:NSSet = NSSet(objects: clientNotifcationCategory, jobNotifcationCategory)
+        
+        let userNotificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, .Alert, .Badge], categories: categories as? Set<UIUserNotificationCategory>)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
+        
+        // register for remote notifications
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
     // MARK: - Core Data stack

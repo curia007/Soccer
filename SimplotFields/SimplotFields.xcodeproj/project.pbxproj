@@ -31,6 +31,7 @@
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
 		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; settings = {ASSET_TAGS = (); }; };
+		C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
 		C0DC96AE1B980D5800FA4542 /* Simplot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot.plist; sourceTree = "<group>"; };
+		C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionProcessor.swift; path = Directions/DirectionProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		C094D8AB1B9733DC000D8B21 /* FieldsFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C0E52B921B9C955B000D98E3 /* Directions */,
 				C07FCA601B98D4F2002972D1 /* Annotations */,
 				C021881D1B9775F300D6D854 /* Overlays */,
 				C094D8CB1B9735E2000D8B21 /* Models */,
@@ -332,6 +335,14 @@
 				C0784ECB1B968F16006CD1E5 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C0E52B921B9C955B000D98E3 /* Directions */ = {
+			isa = PBXGroup;
+			children = (
+				C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */,
+			);
+			name = Directions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +594,7 @@
 				C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */,
 				C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */,
 				C07FCA621B98D500002972D1 /* FieldAnnotation.swift in Sources */,
+				C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     private let locationManager:CLLocationManager = CLLocationManager()
     
+    private var fieldCoordinate: CLLocationCoordinate2D?
+    
     private var isInitialLocation: Bool = true
     
     override func viewDidLoad()
@@ -71,9 +73,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let stringCoordinates: String = self.fieldLocations[fieldName]!
         
         let fieldPoint = CGPointFromString(stringCoordinates)
-        let fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
         
-        let fieldAnnotation: FieldAnnotation = FieldAnnotation(fieldCoordinate, title: match, subtitle: description, fieldName: fieldName )
+        self.fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        
+        let fieldAnnotation: FieldAnnotation = FieldAnnotation(self.fieldCoordinate!, title: match, subtitle: description, fieldName: fieldName )
         
         self.mapView.addAnnotation(fieldAnnotation)
         
@@ -89,6 +92,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
         
             self.mapView.setRegion(region, animated: true)
+            
+            let directionProcessor:DirectionProcessor =  DirectionProcessor()
+            directionProcessor.retrieveDirections(userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile, map: self.mapView)
             
             self.isInitialLocation = false
         }
@@ -108,6 +114,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let overlay: FieldMapOverlay = FieldMapOverlay(field)
             
             return FieldMapOverlayRenderer(overlay, image: fieldImage)
+        }
+        else if overlay is MKPolyline
+        {
+            // draw the track
+            let polyLine = overlay
+            let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
+            polyLineRenderer.strokeColor = UIColor.blueColor()
+            polyLineRenderer.lineWidth = 2.0
+            
+            return polyLineRenderer
         }
         
         return MKOverlayRenderer()

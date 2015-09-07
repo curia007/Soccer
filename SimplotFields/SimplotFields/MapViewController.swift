@@ -94,7 +94,46 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.mapView.setRegion(region, animated: true)
             
             let directionProcessor:DirectionProcessor =  DirectionProcessor()
-            directionProcessor.retrieveDirections(userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile, map: self.mapView)
+            directionProcessor.retrieveDirections(userLocation.coordinate, destinationLocation: self.fieldCoordinate, transportType: MKDirectionsTransportType.Automobile, map: self.mapView, completionHandler: { (response, error) -> Void in
+                
+                directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
+                
+                if (error == nil)
+                {
+                debugPrint("\(__FUNCTION__):  response: \(response)")
+                
+                let routes: [MKRoute]? = response?.routes
+                
+                if (routes != nil)
+                {
+                for route in routes!
+                {
+                let line: MKPolyline = route.polyline
+                map.addOverlay(line)
+                
+                debugPrint("\(__FUNCTION__): Route Name: \(route.name)")
+                debugPrint("\(__FUNCTION__): Total Distance (in Meters) : \(route.distance)")
+                
+                let steps: [MKRouteStep] = route.steps
+                
+                debugPrint("\(__FUNCTION__): Total steps: \(steps.count)")
+                
+                for step in steps
+                {
+                debugPrint("\(__FUNCTION__): Route instructions: \(step.instructions)")
+                debugPrint("\(__FUNCTION__): Route distance: \(step.distance)")
+                }
+                }
+                }
+                }
+                else
+                {
+                print("\(__FUNCTION__):  error: \(error)")
+                }
+                
+                }
+            })
+
             
             self.isInitialLocation = false
         }

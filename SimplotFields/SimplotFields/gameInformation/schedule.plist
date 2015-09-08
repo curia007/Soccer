@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>opponent</key>
+		<string>Rush</string>
+		<key>location</key>
+		<dict>
+			<key>field</key>
+			<string>Field 1</string>
+		</dict>
+		<key>name</key>
+		<string>Game 1</string>
+		<key>date</key>
+		<date>2015-09-08T18:03:47Z</date>
+	</dict>
+</array>
+</plist>

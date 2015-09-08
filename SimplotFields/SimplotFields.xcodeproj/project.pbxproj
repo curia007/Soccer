@@ -30,6 +30,7 @@
 		C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
+		C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EFAE1B9F59DC00079F0E /* schedule.plist */; settings = {ASSET_TAGS = (); }; };
 		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; settings = {ASSET_TAGS = (); }; };
 		C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsFrameworkTests.swift; sourceTree = "<group>"; };
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
+		C0B7EFAE1B9F59DC00079F0E /* schedule.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = schedule.plist; path = gameInformation/schedule.plist; sourceTree = "<group>"; };
 		C0DC96AE1B980D5800FA4542 /* Simplot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot.plist; sourceTree = "<group>"; };
 		C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionProcessor.swift; path = Directions/DirectionProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,6 +343,7 @@
 		C0B7EFAD1B9F4E5300079F0E /* Game Information */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7EFAE1B9F59DC00079F0E /* schedule.plist */,
 			);
 			name = "Game Information";
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */,
+				C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */,
 				C07FCA641B98E35B002972D1 /* FieldLocations.plist in Resources */,
 				C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */,
 				C0784ECA1B968F16006CD1E5 /* Assets.xcassets in Resources */,

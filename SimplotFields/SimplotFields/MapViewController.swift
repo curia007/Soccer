@@ -81,6 +81,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapView.addAnnotation(fieldAnnotation)
         
     }
+    
+    private func loadGameInformation()
+    {
+        
+    }
 
     // MARK: - MKMapViewDelegate functions
 

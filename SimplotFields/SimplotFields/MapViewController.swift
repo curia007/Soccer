@@ -91,7 +91,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             
-            //self.mapView.setRegion(region, animated: true)
+            self.mapView.setRegion(region, animated: true)
             
             let directionProcessor:DirectionProcessor =  DirectionProcessor()
             let directions: MKDirections = directionProcessor.retrieveDirections(userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile)

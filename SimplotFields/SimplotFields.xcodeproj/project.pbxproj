@@ -226,6 +226,7 @@
 		C0784EBE1B968F16006CD1E5 /* SimplotFields */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7EFAD1B9F4E5300079F0E /* Game Information */,
 				C07093C81B98D3D800902BDA /* Annotations */,
 				C094D8CF1B975340000D8B21 /* Storyboards */,
 				C094D8CE1B975229000D8B21 /* View Controllers */,
@@ -335,6 +336,13 @@
 				C0784ECB1B968F16006CD1E5 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C0B7EFAD1B9F4E5300079F0E /* Game Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Game Information";
 			sourceTree = "<group>";
 		};
 		C0E52B921B9C955B000D98E3 /* Directions */ = {

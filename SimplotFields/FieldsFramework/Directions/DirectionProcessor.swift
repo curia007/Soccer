@@ -13,7 +13,7 @@ import MapKit
 public class DirectionProcessor: NSObject
 {
     
-    public func retrieveDirections(sourceLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D, transportType: MKDirectionsTransportType, map: MKMapView, completionHandler: MKDirectionsHandler)
+    public func retrieveDirections(sourceLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D, transportType: MKDirectionsTransportType) -> MKDirections
     {
         let sourceAddressDictionary: [String : AnyObject] = [:]
         
@@ -34,9 +34,8 @@ public class DirectionProcessor: NSObject
         request.transportType = transportType
         
         let directions: MKDirections = MKDirections(request: request)
-        
-        directions.calculateDirectionsWithCompletionHandler(completionHandler)        
-
+     
+        return directions
     }
 
 }

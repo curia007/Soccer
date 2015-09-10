@@ -2,46 +2,45 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Field 1</key>
+	<key>Simplot #1</key>
 	<string>{43.5480038,-116.1509585}</string>
-    <key>Field 2</key>
-    <string>{43.5480349,-116.1528575}</string>
-    <key>Field 3</key>
-    <string>{43.5493102,-116.1519563}</string>
-    <key>Field 4</key>
-    <string>{43.5498623,-116.1508512}</string>
-    <key>Field 5</key>
-    <string>{43.5502744,-116.1493278}</string>
-    <key>Field 6</key>
-    <string>{43.5503444,-116.1482441}</string>
-    <key>Field 7</key>
-    <string>{43.5495279,-116.1468387}</string>
-    <key>Field 8</key>
-    <string>{43.5492635,-116.1453903}</string>
-    <key>Field 9</key>
-    <string>{43.5493335,-116.1448109}</string>
-    <key>Field 10</key>
-    <string>{43.5483226,-116.1468816}</string>
-    <key>Field 11</key>
-    <string>{43.5480660,-116.1454868}</string>
-    <key>Field 12</key>
-    <string>{43.5481593,-116.1443710}</string>
-    <key>Field 13</key>
-    <string>{43.5468684,-116.1454868}</string>
-    <key>Field 14</key>
-    <string>{43.5469151,-116.1442852}</string>
-    <key>Field 15</key>
-    <string>{43.5454531,-116.1446071}</string>
-    <key>Field 16</key>
-    <string>{43.5455153,-116.1458516}</string>
-    <key>Field 17</key>
-    <string>{43.5458886,-116.1470747}</string>
-    <key>Field 18</key>
-    <string>{43.5458575,-116.1483622}</string>
-    <key>Field 19</key>
-    <string>{43.5457953,-116.1496925}</string>
-    <key>Field 20</key>
-    <string>{43.5465418,-116.1509156}</string>
-
+	<key>Simplot #2</key>
+	<string>{43.5480349,-116.1528575}</string>
+	<key>Simplot #3</key>
+	<string>{43.5493102,-116.1519563}</string>
+	<key>Simplot #4</key>
+	<string>{43.5498623,-116.1508512}</string>
+	<key>Simplot #5</key>
+	<string>{43.5502744,-116.1493278}</string>
+	<key>Simplot #6</key>
+	<string>{43.5503444,-116.1482441}</string>
+	<key>Simplot #7</key>
+	<string>{43.5495279,-116.1468387}</string>
+	<key>Simplot #8</key>
+	<string>{43.5492635,-116.1453903}</string>
+	<key>Simplot #9</key>
+	<string>{43.5493335,-116.1448109}</string>
+	<key>Simplot #10</key>
+	<string>{43.5483226,-116.1468816}</string>
+	<key>Simplot #11</key>
+	<string>{43.5480660,-116.1454868}</string>
+	<key>Simplot #12</key>
+	<string>{43.5481593,-116.1443710}</string>
+	<key>Simplot #13</key>
+	<string>{43.5468684,-116.1454868}</string>
+	<key>Simplot #14</key>
+	<string>{43.5469151,-116.1442852}</string>
+	<key>Simplot #15</key>
+	<string>{43.5454531,-116.1446071}</string>
+	<key>Simplot #16</key>
+	<string>{43.5455153,-116.1458516}</string>
+	<key>Simplot #17</key>
+	<string>{43.5458886,-116.1470747}</string>
+	<key>Simplot #18</key>
+	<string>{43.5458575,-116.1483622}</string>
+	<key>Simplot #19</key>
+	<string>{43.5457953,-116.1496925}</string>
+	<key>Simplot #20</key>
+	<string>{43.5465418,-116.1509156}</string>
 </dict>
 </plist>

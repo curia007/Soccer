@@ -24,6 +24,7 @@
 		C0784EE31B968F16006CD1E5 /* SimplotFieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EE21B968F16006CD1E5 /* SimplotFieldsUITests.swift */; };
 		C07FCA621B98D500002972D1 /* FieldAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07FCA611B98D500002972D1 /* FieldAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
 		C07FCA641B98E35B002972D1 /* FieldLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07FCA631B98E35B002972D1 /* FieldLocations.plist */; settings = {ASSET_TAGS = (); }; };
+		C0848FE81B9FB4CB00FF81F9 /* EventProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */; settings = {ASSET_TAGS = (); }; };
 		C094D8AD1B9733DC000D8B21 /* FieldsFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C094D8B41B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ASSET_TAGS = (); }; };
 		C094D8BB1B9733DC000D8B21 /* FieldsFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */; };
@@ -113,6 +114,7 @@
 		C0784EE41B968F16006CD1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C07FCA611B98D500002972D1 /* FieldAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldAnnotation.swift; path = annotations/FieldAnnotation.swift; sourceTree = "<group>"; };
 		C07FCA631B98E35B002972D1 /* FieldLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FieldLocations.plist; sourceTree = "<group>"; };
+		C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProcessor.swift; path = events/EventProcessor.swift; sourceTree = "<group>"; };
 		C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FieldsFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldsFramework.h; sourceTree = "<group>"; };
 		C094D8AE1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -277,6 +279,14 @@
 			name = Annotations;
 			sourceTree = "<group>";
 		};
+		C0848FE61B9FB35700FF81F9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		C094D8A21B972DAA000D8B21 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		C094D8AB1B9733DC000D8B21 /* FieldsFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C0848FE61B9FB35700FF81F9 /* Events */,
 				C0E52B921B9C955B000D98E3 /* Directions */,
 				C07FCA601B98D4F2002972D1 /* Annotations */,
 				C021881D1B9775F300D6D854 /* Overlays */,
@@ -607,6 +618,7 @@
 				C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */,
 				C07FCA621B98D500002972D1 /* FieldAnnotation.swift in Sources */,
 				C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */,
+				C0848FE81B9FB4CB00FF81F9 /* EventProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

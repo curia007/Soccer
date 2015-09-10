@@ -11,6 +11,8 @@ import UIKit
 import MapKit
 import CoreLocation
 
+import EventKit
+
 import FieldsFramework
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
@@ -25,6 +27,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return NSDictionary(contentsOfFile: filePath!) as! [String : String]
     }()
 
+    private let operationQueue:NSOperationQueue = NSOperationQueue()
+    
     private let locationManager:CLLocationManager = CLLocationManager()
     
     private var fieldCoordinate: CLLocationCoordinate2D?
@@ -48,58 +52,35 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         {
             self.locationManager.requestAlwaysAuthorization()
         }
-
-        let park: Field = Field("Simplot")
         
         // handle map span
-       
+        let park: Field = Field("Simplot")
+        
         let overlay: FieldMapOverlay = FieldMapOverlay(park)
         
         self.mapView.addOverlay(overlay)
-        
-        self.addFieldAnnotation("Field 5", match: "Nationals .vs Rush", description: "Third Match")
-    }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - private functions
-    
-    private func addFieldAnnotation(fieldName: String, match: String, description: String)
-    {
-        let stringCoordinates: String = self.fieldLocations[fieldName]!
         
-        let fieldPoint = CGPointFromString(stringCoordinates)
-        
-        self.fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
-        
-        let fieldAnnotation: FieldAnnotation = FieldAnnotation(self.fieldCoordinate!, title: match, subtitle: description, fieldName: fieldName )
-        
-        self.mapView.addAnnotation(fieldAnnotation)
-        
-    }
-    
-    private func loadGameInformation()
-    {
-        
-    }
-
-    // MARK: - MKMapViewDelegate functions
-
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation)
-    {
-        if (self.isInitialLocation == true)
-        {
-            let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+        NSNotificationCenter.defaultCenter().addObserverForName("EVENT_CALENDAR_NOTIFICATION", object: nil, queue: operationQueue) { (notification) -> Void in
             
-            self.mapView.setRegion(region, animated: true)
+            let events:[EKEvent]! = (notification.userInfo!["events" as NSString]) as! [EKEvent]
+            
+            let event: EKEvent = events.first!
+            
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            
+            dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            
+            let usLocale: NSLocale = NSLocale(localeIdentifier: "en_US")
+            dateFormatter.locale = usLocale
+            
+            let description: String = " at \(dateFormatter.stringFromDate(event.startDate))"
+            
+            self.addFieldAnnotation(event.location!, match: event.title, description: description)
             
             let directionProcessor:DirectionProcessor =  DirectionProcessor()
-            let directions: MKDirections = directionProcessor.retrieveDirections(userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile)
+            let directions: MKDirections = directionProcessor.retrieveDirections(self.mapView.userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile)
             
             directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
                 
@@ -135,9 +116,57 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 {
                     print("\(__FUNCTION__):  error: \(error)")
                 }
-                
             }
+        }
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - private functions
+    
+    private func addFieldAnnotation(fieldName: String, match: String, description: String)
+    {
+        let stringCoordinates: String = self.fieldLocations[fieldName]!
+        
+        let fieldPoint = CGPointFromString(stringCoordinates)
+        
+        self.fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        
+        let fieldAnnotation: FieldAnnotation = FieldAnnotation(self.fieldCoordinate!, title: match, subtitle: description, fieldName: fieldName )
+        
+        self.mapView.addAnnotation(fieldAnnotation)
+        
+    }
+    
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    private func loadGameInformation()
+    {
+        let eventProcessor: EventProcessor = EventProcessor(days: 14)
+        debugPrint("\(__FUNCTION__):  eventProcessor: \(eventProcessor)")
+    }
+
+    // MARK: - MKMapViewDelegate functions
+
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation)
+    {
+        if (self.isInitialLocation == true)
+        {
+            let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             
+            //self.mapView.setRegion(region, animated: true)
+            
+            // load game information
+            self.loadGameInformation()
+
             self.isInitialLocation = false
         }
     }

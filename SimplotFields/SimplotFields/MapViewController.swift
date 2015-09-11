@@ -35,6 +35,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private var isInitialLocation: Bool = true
     
+    var routes: [MKRoute]?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -108,11 +110,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 {
                     debugPrint("\(__FUNCTION__):  response: \(response)")
                     
-                    let routes: [MKRoute]? = response?.routes
+                    self.routes = response?.routes
                     
-                    if (routes != nil)
+                    if (self.routes != nil)
                     {
-                        for route in routes!
+                        for route in self.routes!
                         {
                             let line: MKPolyline = route.polyline
                             self.mapView.addOverlay(line)

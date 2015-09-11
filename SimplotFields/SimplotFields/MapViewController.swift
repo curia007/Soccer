@@ -77,6 +77,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             let description: String = " at \(dateFormatter.stringFromDate(event.startDate))"
             
+            // setup local notification
+            
+            let localNotification: UILocalNotification = UILocalNotification()
+            
+            let calendar: NSCalendar = NSCalendar.currentCalendar()
+            let calendarUnits: NSCalendarUnit = [.Month, .Day,  .Year]
+            
+            let dateComponents: NSDateComponents = calendar.components(calendarUnits, fromDate: event.startDate)
+            
+            dateComponents.day = dateComponents.day - 1
+            
+            let notificationDate: NSDate = calendar.dateFromComponents(dateComponents)!
+            
+            localNotification.alertTitle = event.title
+            localNotification.alertBody = description
+            localNotification.category = "Nationals"
+            localNotification.alertLaunchImage = "nationals"
+
+            localNotification.fireDate = notificationDate
+
             self.addFieldAnnotation(event.location!, match: event.title, description: description)
             
             let directionProcessor:DirectionProcessor =  DirectionProcessor()
@@ -162,7 +182,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region: MKCoordinateRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             
-            //self.mapView.setRegion(region, animated: true)
+            self.mapView.setRegion(region, animated: true)
             
             // load game information
             self.loadGameInformation()

@@ -67,6 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         installation.saveInBackground()
     }
     
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
+    {
+        print("\(__FUNCTION__):  error:  \(error)")
+    }
+    
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings)
     {
         debugPrint("\(__FUNCTION__):: notificationSettings: \(notificationSettings)")
@@ -78,6 +83,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+    {
+        
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification)
     {
         
     }

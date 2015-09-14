@@ -26,6 +26,4 @@ public class FieldAnnotation: NSObject, MKAnnotation
         self.subtitle = subtitle + ":  " + fieldName
         self.fieldName = fieldName
     }
-    
-
 }

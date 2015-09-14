@@ -86,8 +86,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let usLocale: NSLocale = NSLocale(localeIdentifier: "en_US")
             dateFormatter.locale = usLocale
             
-            let description: String = " at \(dateFormatter.stringFromDate(event.startDate))"
+            //var description: String = " match @ \(dateFormatter.stringFromDate(event.startDate))"
+            var description: String = ""
             
+            if (event.notes != nil)
+            {
+                description = description + event.notes!
+            }
+
+            let components: [String] = description.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            description = components.joinWithSeparator("")
+
             // setup local notification
             
             let localNotification: UILocalNotification = UILocalNotification()
@@ -102,7 +111,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let notificationDate: NSDate = calendar.dateFromComponents(dateComponents)!
             
             localNotification.alertTitle = event.title
-            localNotification.alertBody = description
+            localNotification.alertBody = "Next Match"
             localNotification.category = "Nationals"
             localNotification.alertLaunchImage = "nationals"
 
@@ -143,6 +152,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 if (placemarks?.count > 0)
                 {
                     let placemark: CLPlacemark = (placemarks?.first)!
+                    let destinationAnnotation: DestinationAnnotation = DestinationAnnotation((placemark.location?.coordinate)!, title: match, subtitle: description, information: description)
+
+                    self.mapView.addAnnotation(destinationAnnotation)
                     self.retrieveDirections((placemark.location?.coordinate)!)
                 }
                 

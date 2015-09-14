@@ -166,14 +166,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             return
         }
         
-        // send event to watch
-        //let userInformation: [String : AnyObject] = notification.userInfo as! [String : AnyObject]
-        //self.session?.transferUserInfo(userInformation)
-        
         let fieldPoint = CGPointFromString(stringCoordinates!)
-        let fieldCoordinate: CLLocationCoordinate2D
+        let fieldCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
 
-        fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        // send event to watch
+        let fieldInformation: [String : AnyObject] = ["LOCATION" : fieldCoordinate as! AnyObject, "NAME" : fieldName, "MATCH" : match, "DESCRIPTION" : description]
+        self.session?.transferUserInfo(fieldInformation)
         
         let fieldAnnotation: FieldAnnotation = FieldAnnotation(fieldCoordinate, title: match, subtitle: description, fieldName: fieldName )
         

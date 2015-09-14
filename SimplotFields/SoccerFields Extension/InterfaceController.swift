@@ -64,4 +64,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         
     }
+    
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject])
+    {
+        debugPrint("\(__FUNCTION__):  userInfo: \(userInfo)")
+    }
 }

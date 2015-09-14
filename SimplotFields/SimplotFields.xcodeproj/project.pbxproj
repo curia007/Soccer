@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; settings = {ASSET_TAGS = (); }; };
-		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; settings = {ASSET_TAGS = (); }; };
+		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; };
+		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; };
 		C02746721B9A3BC5002CA2FE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746711B9A3BC5002CA2FE /* Bolts.framework */; };
 		C02746741B9A40FA002CA2FE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746731B9A40FA002CA2FE /* Parse.framework */; };
 		C02746761B9A42A6002CA2FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746751B9A42A6002CA2FE /* libsqlite3.tbd */; };
@@ -22,18 +22,28 @@
 		C0784ECD1B968F16006CD1E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0784ECB1B968F16006CD1E5 /* LaunchScreen.storyboard */; };
 		C0784ED81B968F16006CD1E5 /* SimplotFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784ED71B968F16006CD1E5 /* SimplotFieldsTests.swift */; };
 		C0784EE31B968F16006CD1E5 /* SimplotFieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EE21B968F16006CD1E5 /* SimplotFieldsUITests.swift */; };
-		C07FCA621B98D500002972D1 /* FieldAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07FCA611B98D500002972D1 /* FieldAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
-		C07FCA641B98E35B002972D1 /* FieldLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07FCA631B98E35B002972D1 /* FieldLocations.plist */; settings = {ASSET_TAGS = (); }; };
-		C0848FE81B9FB4CB00FF81F9 /* EventProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */; settings = {ASSET_TAGS = (); }; };
+		C07FCA621B98D500002972D1 /* FieldAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07FCA611B98D500002972D1 /* FieldAnnotation.swift */; };
+		C07FCA641B98E35B002972D1 /* FieldLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07FCA631B98E35B002972D1 /* FieldLocations.plist */; };
+		C0848FE81B9FB4CB00FF81F9 /* EventProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */; };
+		C090F2F11BA383AE0011FFAC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C090F2EF1BA383AE0011FFAC /* Interface.storyboard */; };
+		C090F2F31BA383AE0011FFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C090F2F21BA383AE0011FFAC /* Assets.xcassets */; };
+		C090F2FA1BA383AF0011FFAC /* SoccerFields Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C090F2F91BA383AF0011FFAC /* SoccerFields Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C090F3011BA383AF0011FFAC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090F3001BA383AF0011FFAC /* InterfaceController.swift */; };
+		C090F3031BA383AF0011FFAC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090F3021BA383AF0011FFAC /* ExtensionDelegate.swift */; };
+		C090F3051BA383AF0011FFAC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090F3041BA383AF0011FFAC /* NotificationController.swift */; };
+		C090F3071BA383AF0011FFAC /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090F3061BA383AF0011FFAC /* GlanceController.swift */; };
+		C090F3091BA383AF0011FFAC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090F3081BA383AF0011FFAC /* ComplicationController.swift */; };
+		C090F30B1BA383AF0011FFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C090F30A1BA383AF0011FFAC /* Assets.xcassets */; };
+		C090F30F1BA383AF0011FFAC /* SoccerFields.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C090F2ED1BA383AE0011FFAC /* SoccerFields.app */; };
 		C094D8AD1B9733DC000D8B21 /* FieldsFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C094D8B41B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ASSET_TAGS = (); }; };
+		C094D8B41B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8BB1B9733DC000D8B21 /* FieldsFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */; };
 		C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; settings = {ASSET_TAGS = (); }; };
-		C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EFAE1B9F59DC00079F0E /* schedule.plist */; settings = {ASSET_TAGS = (); }; };
-		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; settings = {ASSET_TAGS = (); }; };
-		C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */; settings = {ASSET_TAGS = (); }; };
+		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; };
+		C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EFAE1B9F59DC00079F0E /* schedule.plist */; };
+		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; };
+		C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +60,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C0784EBB1B968F16006CD1E5;
 			remoteInfo = SimplotFields;
+		};
+		C090F2FB1BA383AF0011FFAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0784EB41B968F16006CD1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C090F2F81BA383AF0011FFAC;
+			remoteInfo = "SoccerFields Extension";
+		};
+		C090F30D1BA383AF0011FFAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0784EB41B968F16006CD1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C090F2EC1BA383AE0011FFAC;
+			remoteInfo = SoccerFields;
 		};
 		C094D8B51B9733DC000D8B21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -75,6 +99,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C090F3151BA383AF0011FFAC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C090F2FA1BA383AF0011FFAC /* SoccerFields Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C090F3171BA383AF0011FFAC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C090F30F1BA383AF0011FFAC /* SoccerFields.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C094D8C41B9733DC000D8B21 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +161,19 @@
 		C07FCA611B98D500002972D1 /* FieldAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldAnnotation.swift; path = annotations/FieldAnnotation.swift; sourceTree = "<group>"; };
 		C07FCA631B98E35B002972D1 /* FieldLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FieldLocations.plist; sourceTree = "<group>"; };
 		C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProcessor.swift; path = events/EventProcessor.swift; sourceTree = "<group>"; };
+		C090F2ED1BA383AE0011FFAC /* SoccerFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C090F2F01BA383AE0011FFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C090F2F21BA383AE0011FFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C090F2F41BA383AE0011FFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C090F2F91BA383AF0011FFAC /* SoccerFields Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SoccerFields Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C090F2FF1BA383AF0011FFAC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C090F3001BA383AF0011FFAC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C090F3021BA383AF0011FFAC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C090F3041BA383AF0011FFAC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C090F3061BA383AF0011FFAC /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		C090F3081BA383AF0011FFAC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		C090F30A1BA383AF0011FFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C090F30C1BA383AF0011FFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FieldsFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094D8AC1B9733DC000D8B21 /* FieldsFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldsFramework.h; sourceTree = "<group>"; };
 		C094D8AE1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +208,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C0784EDB1B968F16006CD1E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C090F2F61BA383AF0011FFAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,6 +271,8 @@
 		C0784EB31B968F16006CD1E5 = {
 			isa = PBXGroup;
 			children = (
+				C090F2EE1BA383AE0011FFAC /* SoccerFields */,
+				C090F2FD1BA383AF0011FFAC /* SoccerFields Extension */,
 				C02746621B9A3046002CA2FE /* Frameworks */,
 				C0784EBE1B968F16006CD1E5 /* SimplotFields */,
 				C0784ED61B968F16006CD1E5 /* SimplotFieldsTests */,
@@ -223,6 +291,8 @@
 				C0784EDE1B968F16006CD1E5 /* SimplotFieldsUITests.xctest */,
 				C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */,
 				C094D8B31B9733DC000D8B21 /* FieldsFrameworkTests.xctest */,
+				C090F2ED1BA383AE0011FFAC /* SoccerFields.app */,
+				C090F2F91BA383AF0011FFAC /* SoccerFields Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +355,39 @@
 				C0848FE71B9FB4CB00FF81F9 /* EventProcessor.swift */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		C090F2EE1BA383AE0011FFAC /* SoccerFields */ = {
+			isa = PBXGroup;
+			children = (
+				C090F2EF1BA383AE0011FFAC /* Interface.storyboard */,
+				C090F2F21BA383AE0011FFAC /* Assets.xcassets */,
+				C090F2F41BA383AE0011FFAC /* Info.plist */,
+			);
+			path = SoccerFields;
+			sourceTree = "<group>";
+		};
+		C090F2FD1BA383AF0011FFAC /* SoccerFields Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C090F3001BA383AF0011FFAC /* InterfaceController.swift */,
+				C090F3021BA383AF0011FFAC /* ExtensionDelegate.swift */,
+				C090F3041BA383AF0011FFAC /* NotificationController.swift */,
+				C090F3061BA383AF0011FFAC /* GlanceController.swift */,
+				C090F3081BA383AF0011FFAC /* ComplicationController.swift */,
+				C090F30A1BA383AF0011FFAC /* Assets.xcassets */,
+				C090F30C1BA383AF0011FFAC /* Info.plist */,
+				C090F2FE1BA383AF0011FFAC /* Supporting Files */,
+			);
+			path = "SoccerFields Extension";
+			sourceTree = "<group>";
+		};
+		C090F2FE1BA383AF0011FFAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C090F2FF1BA383AF0011FFAC /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C094D8A21B972DAA000D8B21 /* Models */ = {
@@ -389,11 +492,13 @@
 				C0784EB91B968F16006CD1E5 /* Frameworks */,
 				C0784EBA1B968F16006CD1E5 /* Resources */,
 				C094D8C41B9733DC000D8B21 /* Embed Frameworks */,
+				C090F3171BA383AF0011FFAC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C094D8BE1B9733DC000D8B21 /* PBXTargetDependency */,
+				C090F30E1BA383AF0011FFAC /* PBXTargetDependency */,
 			);
 			name = SimplotFields;
 			productName = SimplotFields;
@@ -435,6 +540,40 @@
 			productName = SimplotFieldsUITests;
 			productReference = C0784EDE1B968F16006CD1E5 /* SimplotFieldsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C090F2EC1BA383AE0011FFAC /* SoccerFields */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C090F3161BA383AF0011FFAC /* Build configuration list for PBXNativeTarget "SoccerFields" */;
+			buildPhases = (
+				C090F2EB1BA383AE0011FFAC /* Resources */,
+				C090F3151BA383AF0011FFAC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C090F2FC1BA383AF0011FFAC /* PBXTargetDependency */,
+			);
+			name = SoccerFields;
+			productName = SoccerFields;
+			productReference = C090F2ED1BA383AE0011FFAC /* SoccerFields.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C090F2F81BA383AF0011FFAC /* SoccerFields Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C090F3141BA383AF0011FFAC /* Build configuration list for PBXNativeTarget "SoccerFields Extension" */;
+			buildPhases = (
+				C090F2F51BA383AF0011FFAC /* Sources */,
+				C090F2F61BA383AF0011FFAC /* Frameworks */,
+				C090F2F71BA383AF0011FFAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SoccerFields Extension";
+			productName = "SoccerFields Extension";
+			productReference = C090F2F91BA383AF0011FFAC /* SoccerFields Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		C094D8A91B9733DC000D8B21 /* FieldsFramework */ = {
 			isa = PBXNativeTarget;
@@ -506,6 +645,14 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = C0784EBB1B968F16006CD1E5;
 					};
+					C090F2EC1BA383AE0011FFAC = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 32SL43PW6T;
+					};
+					C090F2F81BA383AF0011FFAC = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 32SL43PW6T;
+					};
 					C094D8A91B9733DC000D8B21 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 32SL43PW6T;
@@ -534,6 +681,8 @@
 				C0784EDD1B968F16006CD1E5 /* SimplotFieldsUITests */,
 				C094D8A91B9733DC000D8B21 /* FieldsFramework */,
 				C094D8B21B9733DC000D8B21 /* FieldsFrameworkTests */,
+				C090F2EC1BA383AE0011FFAC /* SoccerFields */,
+				C090F2F81BA383AF0011FFAC /* SoccerFields Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -563,6 +712,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C090F2EB1BA383AE0011FFAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C090F2F31BA383AE0011FFAC /* Assets.xcassets in Resources */,
+				C090F2F11BA383AE0011FFAC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C090F2F71BA383AF0011FFAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C090F30B1BA383AF0011FFAC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +775,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C090F2F51BA383AF0011FFAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C090F3051BA383AF0011FFAC /* NotificationController.swift in Sources */,
+				C090F3031BA383AF0011FFAC /* ExtensionDelegate.swift in Sources */,
+				C090F3091BA383AF0011FFAC /* ComplicationController.swift in Sources */,
+				C090F3011BA383AF0011FFAC /* InterfaceController.swift in Sources */,
+				C090F3071BA383AF0011FFAC /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C094D8A51B9733DC000D8B21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,6 +821,16 @@
 			target = C0784EBB1B968F16006CD1E5 /* SimplotFields */;
 			targetProxy = C0784EDF1B968F16006CD1E5 /* PBXContainerItemProxy */;
 		};
+		C090F2FC1BA383AF0011FFAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C090F2F81BA383AF0011FFAC /* SoccerFields Extension */;
+			targetProxy = C090F2FB1BA383AF0011FFAC /* PBXContainerItemProxy */;
+		};
+		C090F30E1BA383AF0011FFAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C090F2EC1BA383AE0011FFAC /* SoccerFields */;
+			targetProxy = C090F30D1BA383AF0011FFAC /* PBXContainerItemProxy */;
+		};
 		C094D8B61B9733DC000D8B21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C094D8A91B9733DC000D8B21 /* FieldsFramework */;
@@ -675,6 +863,14 @@
 				C0784ECC1B968F16006CD1E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C090F2EF1BA383AE0011FFAC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C090F2F01BA383AE0011FFAC /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -848,11 +1044,88 @@
 			};
 			name = Release;
 		};
+		C090F3101BA383AF0011FFAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = SoccerFields_Extension;
+				INFOPLIST_FILE = SoccerFields/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C090F3111BA383AF0011FFAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = SoccerFields_Extension;
+				INFOPLIST_FILE = SoccerFields/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		C090F3121BA383AF0011FFAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "SoccerFields Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C090F3131BA383AF0011FFAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "SoccerFields Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		C094D8C21B9733DC000D8B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -864,6 +1137,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.FieldsFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -876,6 +1150,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -887,6 +1162,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.FieldsFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -950,6 +1226,24 @@
 			buildConfigurations = (
 				C0784EEE1B968F16006CD1E5 /* Debug */,
 				C0784EEF1B968F16006CD1E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C090F3141BA383AF0011FFAC /* Build configuration list for PBXNativeTarget "SoccerFields Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C090F3121BA383AF0011FFAC /* Debug */,
+				C090F3131BA383AF0011FFAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C090F3161BA383AF0011FFAC /* Build configuration list for PBXNativeTarget "SoccerFields" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C090F3101BA383AF0011FFAC /* Debug */,
+				C090F3111BA383AF0011FFAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

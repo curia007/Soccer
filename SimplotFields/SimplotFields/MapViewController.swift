@@ -13,9 +13,11 @@ import CoreLocation
 
 import EventKit
 
+import WatchConnectivity
+
 import FieldsFramework
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate
 {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -31,11 +33,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private let locationManager:CLLocationManager = CLLocationManager()
     
-    private var fieldCoordinate: CLLocationCoordinate2D?
-    
     private var isInitialLocation: Bool = true
     
-    var routes: [MKRoute]?
+    private var session: WCSession? = nil
+
+    private var routes: [MKRoute]?
     
     override func viewDidLoad()
     {
@@ -62,6 +64,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.mapView.addOverlay(overlay)
 
+        // establish session to watch
+        if (WCSession.isSupported() == true)
+        {
+            self.session = WCSession.defaultSession()
+            self.session?.delegate = self
+            self.session?.activateSession()
+        }
         
         NSNotificationCenter.defaultCenter().addObserverForName("EVENT_CALENDAR_NOTIFICATION", object: nil, queue: operationQueue) { (notification) -> Void in
             
@@ -101,44 +110,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
             self.addFieldAnnotation(event.location!, match: event.title, description: description)
             
-            let directionProcessor:DirectionProcessor =  DirectionProcessor()
-            let directions: MKDirections = directionProcessor.retrieveDirections(self.mapView.userLocation.coordinate, destinationLocation: self.fieldCoordinate!, transportType: MKDirectionsTransportType.Automobile)
-            
-            directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
-                
-                if (error == nil)
-                {
-                    debugPrint("\(__FUNCTION__):  response: \(response)")
-                    
-                    self.routes = response?.routes
-                    
-                    if (self.routes != nil)
-                    {
-                        for route in self.routes!
-                        {
-                            let line: MKPolyline = route.polyline
-                            self.mapView.addOverlay(line)
-                            
-                            debugPrint("\(__FUNCTION__): Route Name: \(route.name)")
-                            debugPrint("\(__FUNCTION__): Total Distance (in Meters) : \(route.distance)")
-                            
-                            let steps: [MKRouteStep] = route.steps
-                            
-                            debugPrint("\(__FUNCTION__): Total steps: \(steps.count)")
-                            
-                            for step in steps
-                            {
-                                debugPrint("\(__FUNCTION__): Route instructions: \(step.instructions)")
-                                debugPrint("\(__FUNCTION__): Route distance: \(step.distance)")
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    print("\(__FUNCTION__):  error: \(error)")
-                }
-            }
+
         }
     }
     
@@ -147,26 +119,55 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     // MARK: - private functions
     
     private func addFieldAnnotation(fieldName: String, match: String, description: String)
     {
-        let stringCoordinates: String = self.fieldLocations[fieldName]!
+        let stringCoordinates: String? = self.fieldLocations[fieldName]
         
-        let fieldPoint = CGPointFromString(stringCoordinates)
+        if stringCoordinates == nil
+        {
+            // use geocode to get coordinates
+            let geocoder: CLGeocoder = CLGeocoder()
+            geocoder.geocodeAddressString(fieldName, completionHandler: { (placemarks, error) -> Void in
+             if (error == nil)
+             {
+                debugPrint("\(__FUNCTION__): getting coordinates for \(fieldName) placemark: \(placemarks)")
+                
+                if (placemarks?.count > 0)
+                {
+                    let placemark: CLPlacemark = (placemarks?.first)!
+                    self.retrieveDirections((placemark.location?.coordinate)!)
+                }
+                
+                return
+            }
+                print("\(__FUNCTION__): error:: \(error) ")
+            })
+            
+            return
+        }
         
-        self.fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        // send event to watch
+        //let userInformation: [String : AnyObject] = notification.userInfo as! [String : AnyObject]
+        //self.session?.transferUserInfo(userInformation)
         
-        let fieldAnnotation: FieldAnnotation = FieldAnnotation(self.fieldCoordinate!, title: match, subtitle: description, fieldName: fieldName )
+        let fieldPoint = CGPointFromString(stringCoordinates!)
+        let fieldCoordinate: CLLocationCoordinate2D
+
+        fieldCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(fieldPoint.x), CLLocationDegrees(fieldPoint.y))
+        
+        let fieldAnnotation: FieldAnnotation = FieldAnnotation(fieldCoordinate, title: match, subtitle: description, fieldName: fieldName )
         
         self.mapView.addAnnotation(fieldAnnotation)
+        self.retrieveDirections(fieldCoordinate)
         
-    }
-    
-    deinit
-    {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     private func loadGameInformation()
@@ -175,6 +176,48 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         debugPrint("\(__FUNCTION__):  eventProcessor: \(eventProcessor)")
     }
 
+    private func retrieveDirections(coordinate: CLLocationCoordinate2D)
+    {
+        let directionProcessor:DirectionProcessor =  DirectionProcessor()
+        let directions: MKDirections = directionProcessor.retrieveDirections(self.mapView.userLocation.coordinate, destinationLocation: coordinate, transportType: MKDirectionsTransportType.Automobile)
+        
+        directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
+            
+            if (error == nil)
+            {
+                debugPrint("\(__FUNCTION__):  response: \(response)")
+                
+                self.routes = response?.routes
+                
+                if (self.routes != nil)
+                {
+                    for route in self.routes!
+                    {
+                        let line: MKPolyline = route.polyline
+                        self.mapView.addOverlay(line)
+                        
+                        debugPrint("\(__FUNCTION__): Route Name: \(route.name)")
+                        debugPrint("\(__FUNCTION__): Total Distance (in Meters) : \(route.distance)")
+                        
+                        let steps: [MKRouteStep] = route.steps
+                        
+                        debugPrint("\(__FUNCTION__): Total steps: \(steps.count)")
+                        
+                        for step in steps
+                        {
+                            debugPrint("\(__FUNCTION__): Route instructions: \(step.instructions)")
+                            debugPrint("\(__FUNCTION__): Route distance: \(step.distance)")
+                        }
+                    }
+                }
+            }
+            else
+            {
+                print("\(__FUNCTION__):  error: \(error)")
+            }
+        }
+    }
+    
     // MARK: - MKMapViewDelegate functions
 
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation)
@@ -222,5 +265,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return MKOverlayRenderer()
     }
 
+    //MARK: - WCSessionDelegate functions
+    
 }
 

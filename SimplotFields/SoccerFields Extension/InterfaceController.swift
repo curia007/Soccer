@@ -9,17 +9,29 @@
 import WatchKit
 import Foundation
 
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController
+class InterfaceController: WKInterfaceController, WCSessionDelegate
 {
 
     @IBOutlet var mapInterface: WKInterfaceMap!
+    
+    private var session:WCSession? = nil
     
     override func awakeWithContext(context: AnyObject?)
     {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        if (context == nil)
+        {
+            if (WCSession.isSupported() == true)
+            {
+                self.session = WCSession.defaultSession()
+                self.session?.delegate = self
+                self.session?.activateSession()
+            }
+        }
     }
 
     override func willActivate()
@@ -40,5 +52,16 @@ class InterfaceController: WKInterfaceController
     {
         let deviceInterface: WKInterfaceDevice = WKInterfaceDevice.currentDevice()
         deviceInterface.playHaptic(.Notification)
+    }
+    
+    //MARK: - WKSessionDelegate functions
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject])
+    {
+        
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
     }
 }

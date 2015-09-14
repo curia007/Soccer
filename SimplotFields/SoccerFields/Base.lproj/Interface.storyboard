@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SoccerFields" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Button" id="SnV-ML-X9a">
+                        <button width="1" alignment="left" title="Haptic Test" id="SnV-ML-X9a">
                             <connections>
                                 <action selector="hapticAction" destination="AgC-eL-Hgc" id="mTg-mQ-xz9"/>
                             </connections>

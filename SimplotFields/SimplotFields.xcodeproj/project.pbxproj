@@ -371,11 +371,11 @@
 			isa = PBXGroup;
 			children = (
 				C090F3001BA383AF0011FFAC /* InterfaceController.swift */,
+				C090F30A1BA383AF0011FFAC /* Assets.xcassets */,
 				C090F3021BA383AF0011FFAC /* ExtensionDelegate.swift */,
 				C090F3041BA383AF0011FFAC /* NotificationController.swift */,
 				C090F3061BA383AF0011FFAC /* GlanceController.swift */,
 				C090F3081BA383AF0011FFAC /* ComplicationController.swift */,
-				C090F30A1BA383AF0011FFAC /* Assets.xcassets */,
 				C090F30C1BA383AF0011FFAC /* Info.plist */,
 				C090F2FE1BA383AF0011FFAC /* Supporting Files */,
 			);

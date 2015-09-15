@@ -32,6 +32,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate
                 self.session?.activateSession()
             }
         }
+                
     }
 
     override func willActivate()
@@ -68,5 +69,40 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject])
     {
         debugPrint("\(__FUNCTION__):  userInfo: \(userInfo)")
+        
+        if (userInfo.count > 0)
+        {
+            let latitude: CLLocationDegrees? = userInfo["LATITUDE"] as? CLLocationDegrees
+            let longitude: CLLocationDegrees? = userInfo["LONGITUDE"]as? CLLocationDegrees
+            
+            if (latitude != nil)
+            {
+                
+                if (longitude != nil)
+                {
+                    let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+                    self.mapInterface.addAnnotation(coordinate, withPinColor: .Green)
+                    
+                    let mapPoint: MKMapPoint = MKMapPointForCoordinate(coordinate)
+                    let mapRect: MKMapRect = MKMapRectMake(mapPoint.x, mapPoint.x, 50.0, 50.0)
+                    self.mapInterface.setVisibleMapRect(mapRect)
+                    
+                    let span: MKCoordinateSpan = MKCoordinateSpanMake(0.10, 0.10)
+                    let region: MKCoordinateRegion = MKCoordinateRegionMake(coordinate, span)
+                    self.mapInterface.setRegion(region)
+                }
+            }
+        }
     }
+        
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject])
+    {
+        debugPrint("\(__FUNCTION__):  message: \(message)")
+    }
+    
+    func sessionReachabilityDidChange(session: WCSession)
+    {
+        debugPrint("\(__FUNCTION__):  session reachability did change")
+    }
+
 }

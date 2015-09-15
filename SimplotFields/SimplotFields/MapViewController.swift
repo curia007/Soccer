@@ -36,7 +36,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private var isInitialLocation: Bool = true
     
     private var session: WCSession? = nil
-
+    private var sessionUserInfoTransfer: WCSessionUserInfoTransfer? = nil
+    
     private var routes: [MKRoute]?
     
     override func viewDidLoad()
@@ -156,6 +157,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                     self.mapView.addAnnotation(destinationAnnotation)
                     self.retrieveDirections((placemark.location?.coordinate)!)
+                    
+                    // send event to watch
+                    let latitude: CLLocationDegrees = (placemark.location?.coordinate.latitude)!
+                    let longitude: CLLocationDegrees = (placemark.location?.coordinate.longitude)!
+                    let fieldInformation: [String : AnyObject] = ["NAME" : fieldName, "MATCH" : match, "DESCRIPTION" : description, "LATITUDE" : latitude, "LONGITUDE" : longitude]
+                    
+                    let paired: Bool = (self.session?.paired)!
+                    
+                    if (paired == true)
+                    {
+                        if (self.session?.watchAppInstalled == true)
+                        {
+                            if (self.session?.reachable == true)
+                            {
+                                self.sessionUserInfoTransfer = self.session?.transferUserInfo(fieldInformation)
+                            }
+                        }
+                    }
+                    
                 }
                 
                 return
@@ -171,6 +191,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         // send event to watch
         let fieldInformation: [String : AnyObject] = ["LOCATION" : fieldCoordinate as! AnyObject, "NAME" : fieldName, "MATCH" : match, "DESCRIPTION" : description]
+        
+        let paired: Bool = (self.session?.paired)!
+        
+        if (paired == true)
+        {
+            if (self.session?.watchAppInstalled == true)
+            {
+                self.session?.transferUserInfo(fieldInformation)
+            }
+        }
+
         self.session?.transferUserInfo(fieldInformation)
         
         let fieldAnnotation: FieldAnnotation = FieldAnnotation(fieldCoordinate, title: match, subtitle: description, fieldName: fieldName )
@@ -277,5 +308,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     //MARK: - WCSessionDelegate functions
     
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject])
+    {
+        debugPrint("\(__FUNCTION__)")
+    }
+    
+    func session(session: WCSession, didFinishUserInfoTransfer userInfoTransfer: WCSessionUserInfoTransfer, error: NSError?)
+    {
+        debugPrint("\(__FUNCTION__):  error: \(error)  userInfoTranser: \(userInfoTransfer)")
+    }
+    func session(session: WCSession, didFinishFileTransfer fileTransfer: WCSessionFileTransfer, error: NSError?)
+    {
+        debugPrint("\(__FUNCTION__):  error: \(error)")
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject])
+    {
+        debugPrint("\(__FUNCTION__):  message: \(message)")
+    }
+    
+    func sessionReachabilityDidChange(session: WCSession)
+    {
+        debugPrint("\(__FUNCTION__):  session reachability did change")
+    }
 }
 

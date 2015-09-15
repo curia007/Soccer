@@ -32,10 +32,25 @@ class TodayViewController: UIViewController, NCWidgetProviding
         
         self.mapView.layer.cornerRadius = 50.0
         
+        updateSnapshot()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Mark: - private methods
+    
+    private func updateSnapshot()
+    {
+        let eventProcessor: EventProcessor = EventProcessor()
+        eventProcessor.retrieveEvents(14)
+        
         NSNotificationCenter.defaultCenter().addObserverForName("EVENT_CALENDAR_NOTIFICATION", object: nil, queue: operationQueue) { (notification) -> Void in
-            
+
             let events:[EKEvent]! = (notification.userInfo!["events" as NSString]) as! [EKEvent]
-            
             let event: EKEvent = events.first!
             
             let dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -56,21 +71,33 @@ class TodayViewController: UIViewController, NCWidgetProviding
             
             let components: [String] = description.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
             description = components.joinWithSeparator("")
-
+            
             let address: String = event.location!
             
             let geocoder: CLGeocoder = CLGeocoder()
-            geocoder.geocodeAddressString(address, completionHandler: { (placemark, error) -> Void in
+            geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
                 
+                if (error == nil)
+                {
+                    let placemark: CLPlacemark = (placemarks?.first)!
+                    debugPrint("\(__FUNCTION__):  placemark: \(placemark)")
+                    
+                    let destinationAnnotation: DestinationAnnotation = DestinationAnnotation((placemark.location?.coordinate)!, title: placemark.name!, subtitle: description, information: description)
+                    
+                    self.mapView.addAnnotation(destinationAnnotation)
+                    
+                    let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    let region: MKCoordinateRegion = MKCoordinateRegion(center: (placemark.location?.coordinate)!, span: span)
+                    
+                    self.mapView.setRegion(region, animated: true)
+
+                }
+                else
+                {
+                    print("\(__FUNCTION__):  error: \(error)")
+                }
             })
         }
-
-    }
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - NCWidgetProviding methods

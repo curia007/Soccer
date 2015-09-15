@@ -10,13 +10,11 @@ import UIKit
 
 import EventKit
 
-public class EventProcessor
+public class EventProcessor: NSObject
 {
     let eventStore: EKEventStore = EKEventStore()
     
-    public var events: [EKEvent] = []
-    
-    public init (days: Int)
+    public func retrieveEvents (days: Int)
     {
         self.eventStore.requestAccessToEntityType(.Event) { (granted, error) -> Void in
             
@@ -43,8 +41,6 @@ public class EventProcessor
                         endDate: endDate, calendars: calendars)
                     
                     let events: [EKEvent] = self.eventStore.eventsMatchingPredicate(predicate)
-
-                    self.events = events
                     
                     if (events.count > 0)
                     {

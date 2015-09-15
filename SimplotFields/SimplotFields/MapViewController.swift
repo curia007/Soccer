@@ -213,7 +213,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private func loadGameInformation()
     {
-        let eventProcessor: EventProcessor = EventProcessor(days: 14)
+        let eventProcessor: EventProcessor = EventProcessor()
+        eventProcessor.retrieveEvents(14)
         debugPrint("\(__FUNCTION__):  eventProcessor: \(eventProcessor)")
     }
 

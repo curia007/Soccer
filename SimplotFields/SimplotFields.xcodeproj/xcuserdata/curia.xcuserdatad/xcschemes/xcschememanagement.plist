@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Soccer Today.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>SoccerFields.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -63,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>C094D8B21B9733DC000D8B21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C0AF09801BA7C82C001A72AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

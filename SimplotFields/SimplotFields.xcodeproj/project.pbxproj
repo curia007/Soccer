@@ -42,6 +42,11 @@
 		C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C094D8CD1B973605000D8B21 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C094D8CC1B973605000D8B21 /* Field.swift */; };
+		C0AF09831BA7C82C001A72AA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AF09821BA7C82C001A72AA /* NotificationCenter.framework */; };
+		C0AF09861BA7C82C001A72AA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF09851BA7C82C001A72AA /* TodayViewController.swift */; };
+		C0AF09891BA7C82C001A72AA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0AF09871BA7C82C001A72AA /* MainInterface.storyboard */; };
+		C0AF098D1BA7C82C001A72AA /* Soccer Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0AF09811BA7C82C001A72AA /* Soccer Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0AF09921BA7D083001A72AA /* FieldsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094D8AA1B9733DC000D8B21 /* FieldsFramework.framework */; };
 		C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EFAE1B9F59DC00079F0E /* schedule.plist */; };
 		C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DC96AE1B980D5800FA4542 /* Simplot.plist */; };
 		C0E52B941B9C994B000D98E3 /* DirectionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */; };
@@ -97,6 +102,13 @@
 			remoteGlobalIDString = C094D8A91B9733DC000D8B21;
 			remoteInfo = FieldsFramework;
 		};
+		C0AF098B1BA7C82C001A72AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0784EB41B968F16006CD1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0AF09801BA7C82C001A72AA;
+			remoteInfo = "Soccer Today";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +143,17 @@
 				C094D8C01B9733DC000D8B21 /* FieldsFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0AF09911BA7C82D001A72AA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0AF098D1BA7C82C001A72AA /* Soccer Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -183,6 +206,11 @@
 		C094D8BA1B9733DC000D8B21 /* FieldsFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsFrameworkTests.swift; sourceTree = "<group>"; };
 		C094D8BC1B9733DC000D8B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C094D8CC1B973605000D8B21 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = models/Field.swift; sourceTree = "<group>"; };
+		C0AF09811BA7C82C001A72AA /* Soccer Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Soccer Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0AF09821BA7C82C001A72AA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C0AF09851BA7C82C001A72AA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C0AF09881BA7C82C001A72AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C0AF098A1BA7C82C001A72AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0B7EFAE1B9F59DC00079F0E /* schedule.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = schedule.plist; path = gameInformation/schedule.plist; sourceTree = "<group>"; };
 		C0DC96AE1B980D5800FA4542 /* Simplot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simplot.plist; sourceTree = "<group>"; };
 		C0E52B931B9C994B000D98E3 /* DirectionProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionProcessor.swift; path = Directions/DirectionProcessor.swift; sourceTree = "<group>"; };
@@ -238,6 +266,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0AF097E1BA7C82C001A72AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0AF09921BA7D083001A72AA /* FieldsFramework.framework in Frameworks */,
+				C0AF09831BA7C82C001A72AA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -259,6 +296,7 @@
 				C02746751B9A42A6002CA2FE /* libsqlite3.tbd */,
 				C02746731B9A40FA002CA2FE /* Parse.framework */,
 				C02746711B9A3BC5002CA2FE /* Bolts.framework */,
+				C0AF09821BA7C82C001A72AA /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,6 +313,7 @@
 			children = (
 				C090F2EE1BA383AE0011FFAC /* SoccerFields */,
 				C090F2FD1BA383AF0011FFAC /* SoccerFields Extension */,
+				C0AF09841BA7C82C001A72AA /* Soccer Today */,
 				C02746621B9A3046002CA2FE /* Frameworks */,
 				C0784EBE1B968F16006CD1E5 /* SimplotFields */,
 				C0784ED61B968F16006CD1E5 /* SimplotFieldsTests */,
@@ -295,6 +334,7 @@
 				C094D8B31B9733DC000D8B21 /* FieldsFrameworkTests.xctest */,
 				C090F2ED1BA383AE0011FFAC /* SoccerFields.app */,
 				C090F2F91BA383AF0011FFAC /* SoccerFields Extension.appex */,
+				C0AF09811BA7C82C001A72AA /* Soccer Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,6 +497,16 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		C0AF09841BA7C82C001A72AA /* Soccer Today */ = {
+			isa = PBXGroup;
+			children = (
+				C0AF09851BA7C82C001A72AA /* TodayViewController.swift */,
+				C0AF09871BA7C82C001A72AA /* MainInterface.storyboard */,
+				C0AF098A1BA7C82C001A72AA /* Info.plist */,
+			);
+			path = "Soccer Today";
+			sourceTree = "<group>";
+		};
 		C0B7EFAD1B9F4E5300079F0E /* Game Information */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,12 +546,14 @@
 				C0784EBA1B968F16006CD1E5 /* Resources */,
 				C094D8C41B9733DC000D8B21 /* Embed Frameworks */,
 				C090F3171BA383AF0011FFAC /* Embed Watch Content */,
+				C0AF09911BA7C82D001A72AA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C094D8BE1B9733DC000D8B21 /* PBXTargetDependency */,
 				C090F30E1BA383AF0011FFAC /* PBXTargetDependency */,
+				C0AF098C1BA7C82C001A72AA /* PBXTargetDependency */,
 			);
 			name = SimplotFields;
 			productName = SimplotFields;
@@ -615,6 +667,23 @@
 			productReference = C094D8B31B9733DC000D8B21 /* FieldsFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C0AF09801BA7C82C001A72AA /* Soccer Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0AF09901BA7C82D001A72AA /* Build configuration list for PBXNativeTarget "Soccer Today" */;
+			buildPhases = (
+				C0AF097D1BA7C82C001A72AA /* Sources */,
+				C0AF097E1BA7C82C001A72AA /* Frameworks */,
+				C0AF097F1BA7C82C001A72AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Soccer Today";
+			productName = "Soccer Today";
+			productReference = C0AF09811BA7C82C001A72AA /* Soccer Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -664,6 +733,10 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = C0784EBB1B968F16006CD1E5;
 					};
+					C0AF09801BA7C82C001A72AA = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 32SL43PW6T;
+					};
 				};
 			};
 			buildConfigurationList = C0784EB71B968F16006CD1E5 /* Build configuration list for PBXProject "SimplotFields" */;
@@ -686,6 +759,7 @@
 				C094D8B21B9733DC000D8B21 /* FieldsFrameworkTests */,
 				C090F2EC1BA383AE0011FFAC /* SoccerFields */,
 				C090F2F81BA383AF0011FFAC /* SoccerFields Extension */,
+				C0AF09801BA7C82C001A72AA /* Soccer Today */,
 			);
 		};
 /* End PBXProject section */
@@ -746,6 +820,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0AF097F1BA7C82C001A72AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0AF09891BA7C82C001A72AA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +894,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0AF097D1BA7C82C001A72AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0AF09861BA7C82C001A72AA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -850,6 +940,11 @@
 			target = C094D8A91B9733DC000D8B21 /* FieldsFramework */;
 			targetProxy = C094D8BD1B9733DC000D8B21 /* PBXContainerItemProxy */;
 		};
+		C0AF098C1BA7C82C001A72AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0AF09801BA7C82C001A72AA /* Soccer Today */;
+			targetProxy = C0AF098B1BA7C82C001A72AA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -875,6 +970,14 @@
 				C090F2F01BA383AE0011FFAC /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		C0AF09871BA7C82C001A72AA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0AF09881BA7C82C001A72AA /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1195,6 +1298,34 @@
 			};
 			name = Release;
 		};
+		C0AF098E1BA7C82D001A72AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Soccer Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmelouria.SimplotFields.Soccer-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C0AF098F1BA7C82D001A72AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Soccer Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmelouria.SimplotFields.Soccer-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1269,6 +1400,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C0AF09901BA7C82D001A72AA /* Build configuration list for PBXNativeTarget "Soccer Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0AF098E1BA7C82D001A72AA /* Debug */,
+				C0AF098F1BA7C82D001A72AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

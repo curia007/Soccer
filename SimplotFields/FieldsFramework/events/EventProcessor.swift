@@ -63,7 +63,5 @@ public class EventProcessor
     {
         let eventStore: EKEventStore = EKEventStore()
         eventStore.requestAccessToEntityType(entityType, completion: completionHandler)
-            
-        
     }
 }

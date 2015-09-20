@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupUserNotificationActions()
         
         // start locating babysitter
-        Parse.setApplicationId("xjCTHk0lLTrDyCVzBQZDElyivece4dUYLqYpeJNt", clientKey: "4LjnzcomCgvvSagerROGPbop1dC9JSlQLeC04vYo")
+        //Parse.setApplicationId("xjCTHk0lLTrDyCVzBQZDElyivece4dUYLqYpeJNt", clientKey: "4LjnzcomCgvvSagerROGPbop1dC9JSlQLeC04vYo")
         
         return true
     }
@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         debugPrint("\(__FUNCTION__):  deviceToken: \(deviceToken)")
         
-        let installation = PFInstallation.currentInstallation()
-        installation.setDeviceTokenFromData(deviceToken)
-        installation.saveInBackground()
+        //let installation = PFInstallation.currentInstallation()
+        //installation.setDeviceTokenFromData(deviceToken)
+        //installation.saveInBackground()
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)

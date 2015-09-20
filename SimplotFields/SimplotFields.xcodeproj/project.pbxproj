@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; };
 		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; };
-		C02746721B9A3BC5002CA2FE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746711B9A3BC5002CA2FE /* Bolts.framework */; };
-		C02746741B9A40FA002CA2FE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746731B9A40FA002CA2FE /* Parse.framework */; };
 		C02746761B9A42A6002CA2FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746751B9A42A6002CA2FE /* libsqlite3.tbd */; };
 		C027467A1B9A42EA002CA2FE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02746781B9A42EA002CA2FE /* SystemConfiguration.framework */; };
 		C027467C1B9A430B002CA2FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C027467B1B9A430B002CA2FE /* AudioToolbox.framework */; };
@@ -224,8 +222,6 @@
 				C027467C1B9A430B002CA2FE /* AudioToolbox.framework in Frameworks */,
 				C027467A1B9A42EA002CA2FE /* SystemConfiguration.framework in Frameworks */,
 				C02746761B9A42A6002CA2FE /* libsqlite3.tbd in Frameworks */,
-				C02746741B9A40FA002CA2FE /* Parse.framework in Frameworks */,
-				C02746721B9A3BC5002CA2FE /* Bolts.framework in Frameworks */,
 				C094D8BF1B9733DC000D8B21 /* FieldsFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1073,7 +1069,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "../sdks/**";
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1092,7 +1088,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1304,7 +1300,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Soccer Today/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carmelouria.SimplotFields.Soccer-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1318,7 +1314,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Soccer Today/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carmelouria.SimplotFields.Soccer-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1408,6 +1404,7 @@
 				C0AF098F1BA7C82D001A72AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

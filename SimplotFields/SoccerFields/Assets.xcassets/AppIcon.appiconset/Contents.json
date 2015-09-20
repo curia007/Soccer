@@ -3,13 +3,19 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
+      "filename" : "banner-logo-2_29.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
       "filename" : "banner-logo-2_29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "banner-logo-2_24@2x.png",
+      "filename" : "banner-logo-2_38_48@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -17,7 +23,7 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "banner-logo-2_27@2x.png",
+      "filename" : "banner-logo-2_42_58@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -32,7 +38,7 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "banner-logo-2_29@3.png",
+      "filename" : "banner-logo-2_29@3x-1.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },

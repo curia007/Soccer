@@ -35,6 +35,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private var isInitialLocation: Bool = true
     
+    private let eventProcessor: EventProcessor = EventProcessor()
+    
     private var session: WCSession? = nil
     private var sessionUserInfoTransfer: WCSessionUserInfoTransfer? = nil
     
@@ -213,9 +215,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private func loadGameInformation()
     {
-        let eventProcessor: EventProcessor = EventProcessor()
-        eventProcessor.retrieveEvents(14)
-        debugPrint("\(__FUNCTION__):  eventProcessor: \(eventProcessor)")
+        // TEST
+        
+        let testURL: NSURL? = NSBundle.mainBundle().URLForResource("ccb8a510-00b9-0133-6967-3c764e0595b0", withExtension: "ics")
+        
+        debugPrint("\(__FUNCTION__):  url: \(testURL)")
+        
+        if (testURL != nil)
+        {
+       
+            self.eventProcessor.retrieveEventsFromURL(testURL!, completionHandler: { () -> Void in
+                
+                self.eventProcessor.retrieveEvents(14)
+                debugPrint("\(__FUNCTION__):  eventProcessor: \(self.eventProcessor)")
+
+            })
+        }
+        
+        // END TEST
+        
     }
 
     private func retrieveDirections(coordinate: CLLocationCoordinate2D)

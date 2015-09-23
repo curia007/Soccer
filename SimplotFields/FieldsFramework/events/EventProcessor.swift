@@ -75,6 +75,8 @@ public class EventProcessor: NSObject
 
     public func importCalendarInformation (dictionary: [String : AnyObject]) throws
     {
+        var isLocalSource: Bool = true
+        
         // check sources
         let sources: [EKSource] = self.eventStore.sources
         
@@ -85,10 +87,21 @@ public class EventProcessor: NSObject
             if (sourceObject.sourceType == EKSourceType.Subscribed)
             {
                 source = sourceObject
+                isLocalSource = false
             }
         }
         
-        let calendar: EKCalendar = EKCalendar(forEntityType: .Event, eventStore: self.eventStore)
+        // check if local source
+        var calendar: EKCalendar?
+        
+        if (isLocalSource == true)
+        {
+            calendar = self.eventStore.defaultCalendarForNewEvents
+        }
+        else
+        {
+            calendar = EKCalendar(forEntityType: .Event, eventStore: self.eventStore)
+        }
         
         let lines: [String] = dictionary["lines"] as! [String]
         
@@ -104,11 +117,14 @@ public class EventProcessor: NSObject
             }
         }
         
-        calendar.title = title
+        if (isLocalSource == false)
+        {
+            calendar!.title = title
+        }
         
         if (source != nil)
         {
-            calendar.source = source!
+            calendar!.source = source!
         }
    
         let events: [AnyObject] = dictionary["events"] as! [AnyObject]
@@ -117,7 +133,7 @@ public class EventProcessor: NSObject
         {
             let event: EKEvent = EKEvent(eventStore: self.eventStore)
             
-            event.calendar = calendar
+            event.calendar = calendar!
             event.title = eventObject["SUMMARY"] as! String
             event.location = eventObject["LOCATION"] as? String
             event.notes = eventObject["DESCRIPTION"] as? String
@@ -171,7 +187,10 @@ public class EventProcessor: NSObject
 
         }
  
-        try self.eventStore.saveCalendar(calendar, commit: true)
+        if (isLocalSource == false)
+        {
+            try self.eventStore.saveCalendar(calendar!, commit: true)
+        }
         
     }
 

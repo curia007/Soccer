@@ -82,7 +82,7 @@ public class EventProcessor: NSObject
         
         for sourceObject in sources
         {
-            if (sourceObject.sourceType == EKSourceType.Local)
+            if (sourceObject.sourceType == EKSourceType.Subscribed)
             {
                 source = sourceObject
             }
@@ -118,9 +118,9 @@ public class EventProcessor: NSObject
             let event: EKEvent = EKEvent(eventStore: self.eventStore)
             
             event.calendar = calendar
-            event.title = eventObject["DESCRIPTION"] as! String
+            event.title = eventObject["SUMMARY"] as! String
             event.location = eventObject["LOCATION"] as? String
-            event.notes = eventObject["SUMMARY"] as? String
+            event.notes = eventObject["DESCRIPTION"] as? String
             
             // process start and end dates
             let keys: [String] = eventObject.allKeys as! [String]

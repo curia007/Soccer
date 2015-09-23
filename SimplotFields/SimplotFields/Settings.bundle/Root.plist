@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>Name</string>
 			<key>Key</key>
-			<string>name_preference</string>
+			<string>calendar_url</string>
 			<key>DefaultValue</key>
 			<string>http://ical-cdn.teamsnap.com/team_schedule/filter/games/ccb8a510-00b9-0133-6967-3c764e0595b0.ics</string>
 			<key>IsSecure</key>
@@ -29,6 +29,16 @@
 			<string>None</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Reset</string>
+			<key>Key</key>
+			<string>reset_calendar</string>
+			<key>DefaultValue</key>
+			<false/>
 		</dict>
 	</array>
 </dict>

@@ -42,6 +42,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private var routes: [MKRoute]?
     
+    private var calendarURL: NSURL?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -75,7 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.session?.activateSession()
         }
         
-        NSNotificationCenter.defaultCenter().addObserverForName("EVENT_CALENDAR_NOTIFICATION", object: nil, queue: operationQueue) { (notification) -> Void in
+        NSNotificationCenter.defaultCenter().addObserverForName("EVENT_CALENDAR_NOTIFICATION", object: nil, queue: self.operationQueue) { (notification) -> Void in
             
             let events:[EKEvent]! = (notification.userInfo!["events" as NSString]) as! [EKEvent]
             
@@ -121,8 +123,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             localNotification.fireDate = notificationDate
 
             self.addFieldAnnotation(event.location!, match: event.title, description: description)
-            
 
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(NSUserDefaultsDidChangeNotification, object: nil, queue: self.operationQueue) { (notificaton) -> Void in
+            self.loadGameInformation()
         }
     }
     
@@ -213,18 +218,42 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
+    private func processUserSettings()
+    {
+        let userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let resetCalendar: Bool = userDefaults.boolForKey("reset_calendar")
+        let calendarString: String? = userDefaults.stringForKey("calendar_url")
+        
+        if (calendarString == nil)
+        {
+            self.calendarURL = NSBundle.mainBundle().URLForResource("ccb8a510-00b9-0133-6967-3c764e0595b0", withExtension: "ics")
+            
+            print("\(__FUNCTION__):  calendar URL settings has not been set")
+        }
+        else
+        {
+          //  self.calendarURL = NSURL(string: calendarString!)
+        }
+        
+        if (resetCalendar == true)
+        {
+            // TODO: add reset functionality in Event Processor
+        }
+        
+        
+    }
+    
     private func loadGameInformation()
     {
-        // TEST
+        self.processUserSettings()
         
-        let testURL: NSURL? = NSBundle.mainBundle().URLForResource("ccb8a510-00b9-0133-6967-3c764e0595b0", withExtension: "ics")
+        debugPrint("\(__FUNCTION__):  url: \(self.calendarURL)")
         
-        debugPrint("\(__FUNCTION__):  url: \(testURL)")
-        
-        if (testURL != nil)
+        if (self.calendarURL != nil)
         {
        
-            self.eventProcessor.retrieveEventsFromURL(testURL!, completionHandler: { () -> Void in
+            self.eventProcessor.retrieveEventsFromURL(self.calendarURL!, completionHandler: { () -> Void in
                 
                 self.eventProcessor.retrieveEvents(14)
                 debugPrint("\(__FUNCTION__):  eventProcessor: \(self.eventProcessor)")
@@ -232,7 +261,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             })
         }
         
-        // END TEST
         
     }
 

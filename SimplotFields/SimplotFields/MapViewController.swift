@@ -253,12 +253,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if (self.calendarURL != nil)
         {
        
-            self.eventProcessor.retrieveEventsFromURL(self.calendarURL!, completionHandler: { () -> Void in
+            self.eventProcessor.eventStore.requestAccessToEntityType(.Event) { (granted, error) -> Void in
                 
-                self.eventProcessor.retrieveEvents(14)
-                debugPrint("\(__FUNCTION__):  eventProcessor: \(self.eventProcessor)")
-
-            })
+                if (error == nil)
+                {
+                    if (granted == true)
+                    {
+                        
+                        self.eventProcessor.retrieveEventsFromURL(self.calendarURL!, completionHandler: { () -> Void in
+                            
+                            self.eventProcessor.retrieveEvents(14)
+                            debugPrint("\(__FUNCTION__):  eventProcessor: \(self.eventProcessor)")
+                            
+                        })
+                    }
+                }
+            }
         }
         
         

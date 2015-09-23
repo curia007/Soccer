@@ -12,12 +12,7 @@ import EventKit
 
 public class EventProcessor: NSObject
 {
-    let eventStore: EKEventStore = EKEventStore()
-    
-    private let webView: UIWebView = {
-        let frame: CGRect = CGRectMake(0.0, 0.0, 300.0, 300.0)
-        return UIWebView(frame: frame)
-    }()
+    public let eventStore: EKEventStore = EKEventStore()
     
     private var downloadTask:NSURLSessionDataTask?
     
@@ -30,12 +25,9 @@ public class EventProcessor: NSObject
                 if (granted == true)
                 {
                     
-                    //let defaultCalendar: EKCalendar = self.eventStore.calendarsForEntityType(EKEntityType.Event)
-                    
                     // Get the appropriate calendar
                     let calendar: NSCalendar? = NSCalendar.currentCalendar()
 
-                    //let calendars: [EKCalendar] = Array<EKCalendar>(arrayLiteral: defaultCalendar)
                     let calendars: [EKCalendar] = self.eventStore.calendarsForEntityType(EKEntityType.Event)
                     
                     // Create the start and end date components
@@ -126,7 +118,7 @@ public class EventProcessor: NSObject
         {
             calendar!.source = source!
         }
-   
+        
         let events: [AnyObject] = dictionary["events"] as! [AnyObject]
         
         for eventObject in events
@@ -143,7 +135,7 @@ public class EventProcessor: NSObject
             
             var startDateString : String?
             var startDateTimeZone: String?
-
+            
             var endDateString : String?
             var endDateTimeZone: String?
             
@@ -173,25 +165,24 @@ public class EventProcessor: NSObject
                 let error: NSError = NSError(domain: "Could not retrieve start date...", code: 0, userInfo: nil)
                 throw error
             }
- 
+            
             if (endDate == nil)
             {
                 let error: NSError = NSError(domain: "Could not retrieve end date...", code: 0, userInfo: nil)
                 throw error
             }
-
+            
             event.startDate = startDate!
             event.endDate = endDate!
             
             try self.eventStore.saveEvent(event, span: EKSpan.ThisEvent, commit: true)
-
+            
         }
- 
+        
         if (isLocalSource == false)
         {
             try self.eventStore.saveCalendar(calendar!, commit: true)
         }
-        
     }
 
     // MARK: - private methods

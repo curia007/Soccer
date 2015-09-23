@@ -75,6 +75,19 @@ public class EventProcessor: NSObject
 
     public func importCalendarInformation (dictionary: [String : AnyObject]) throws
     {
+        // check sources
+        let sources: [EKSource] = self.eventStore.sources
+        
+        var source: EKSource?
+        
+        for sourceObject in sources
+        {
+            if (sourceObject.sourceType == EKSourceType.Local)
+            {
+                source = sourceObject
+            }
+        }
+        
         let calendar: EKCalendar = EKCalendar(forEntityType: .Event, eventStore: self.eventStore)
         
         let lines: [String] = dictionary["lines"] as! [String]
@@ -93,6 +106,11 @@ public class EventProcessor: NSObject
         
         calendar.title = title
         
+        if (source != nil)
+        {
+            calendar.source = source!
+        }
+   
         let events: [AnyObject] = dictionary["events"] as! [AnyObject]
         
         for eventObject in events
@@ -154,6 +172,7 @@ public class EventProcessor: NSObject
         }
  
         try self.eventStore.saveCalendar(calendar, commit: true)
+        
     }
 
     // MARK: - private methods
@@ -198,7 +217,7 @@ public class EventProcessor: NSObject
             }
             catch
             {
-                
+                print("\(__FUNCTION__): error: \(error)")
             }
         }
     }

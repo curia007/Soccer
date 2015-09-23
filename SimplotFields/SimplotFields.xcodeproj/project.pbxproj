@@ -10,6 +10,7 @@
 		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; };
 		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; };
 		C02BCB801BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics in Resources */ = {isa = PBXBuildFile; fileRef = C02BCB7F1BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics */; settings = {ASSET_TAGS = (); }; };
+		C039557E1BB2FB8E007BD490 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C039557D1BB2FB8E007BD490 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 		C0784EC01B968F16006CD1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */; };
 		C0784EC21B968F16006CD1E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EC11B968F16006CD1E5 /* MapViewController.swift */; };
 		C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0784EC31B968F16006CD1E5 /* Main.storyboard */; };
@@ -159,6 +160,7 @@
 		C021881F1B97760200D6D854 /* FieldMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldMapOverlay.swift; path = overlays/FieldMapOverlay.swift; sourceTree = "<group>"; };
 		C02746631B9A3088002CA2FE /* SimplotFields-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimplotFields-Bridging-Header.h"; sourceTree = "<group>"; };
 		C02BCB7F1BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ccb8a510-00b9-0133-6967-3c764e0595b0.ics"; path = "sampleData/ccb8a510-00b9-0133-6967-3c764e0595b0.ics"; sourceTree = "<group>"; };
+		C039557D1BB2FB8E007BD490 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C0784EBC1B968F16006CD1E5 /* SimplotFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplotFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0784EC11B968F16006CD1E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 			name = "Sample Data";
 			sourceTree = "<group>";
 		};
+		C039557C1BB2FB60007BD490 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C039557D1BB2FB8E007BD490 /* Settings.bundle */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		C07093C81B98D3D800902BDA /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +340,7 @@
 		C0784EBE1B968F16006CD1E5 /* SimplotFields */ = {
 			isa = PBXGroup;
 			children = (
+				C039557C1BB2FB60007BD490 /* Settings */,
 				C02BCB7C1BB0706700FCA377 /* Sample Data */,
 				C0B7EFAD1B9F4E5300079F0E /* Game Information */,
 				C07093C81B98D3D800902BDA /* Annotations */,
@@ -758,6 +769,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C039557E1BB2FB8E007BD490 /* Settings.bundle in Resources */,
 				C0DC96AF1B980D5800FA4542 /* Simplot.plist in Resources */,
 				C0B7EFAF1B9F59DC00079F0E /* schedule.plist in Resources */,
 				C07FCA641B98E35B002972D1 /* FieldLocations.plist in Resources */,

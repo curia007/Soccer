@@ -62,11 +62,6 @@ public class EventProcessor: NSObject
         
      }
     
-    public func testWithWebView(URL: NSURL)
-    {
-        UIApplication.sharedApplication().openURL(URL)
-    }
-    
     public func retrieveEventsFromURL(url: NSURL, completionHandler: (() -> Void))
     {
         let session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -78,7 +73,51 @@ public class EventProcessor: NSObject
         self.downloadTask!.resume()
     }
 
+    public func importCalendarInformation (dictionary: [String : AnyObject]) throws
+    {
+        let calendar: EKCalendar = EKCalendar(forEntityType: .Event, eventStore: self.eventStore)
+        
+        let lines: [String] = dictionary["lines"] as! [String]
+        
+        var title: String = ""
+        
+        for line in lines
+        {
+            let components: [String] = line.componentsSeparatedByString(":")
+            
+            if (components[0] == "X-WR-CALNAME")
+            {
+                title = components[1]
+            }
+        }
+        
+        calendar.title = title
+        
+        let events: [AnyObject] = dictionary["events"] as! [AnyObject]
+        
+        for eventObject in events
+        {
+            let event: EKEvent = EKEvent(eventStore: self.eventStore)
+            
+            event.calendar = calendar
+            event.title = eventObject["DESCRIPTION"] as! String
+            event.location = eventObject["LOCATION"] as? String
+            event.notes = eventObject["SUMMARY"] as? String
+            
+            try self.eventStore.saveEvent(event, span: EKSpan.ThisEvent, commit: true)
+
+        }
+ 
+        try self.eventStore.saveCalendar(calendar, commit: true)
+    }
+
     // MARK: - private methods
+    
+    private func convert(dataString: String) -> NSDate
+    {
+        
+        return NSDate()
+    }
     
     private func processCalendar(data: NSData, completionHandler: (() -> Void))
     {
@@ -98,7 +137,17 @@ public class EventProcessor: NSObject
         let calendars: [AnyObject] = self.extractCalendar(lines)
         
         // add Calendar to EventBook and set user defaults
-        
+        for calendar in calendars
+        {
+            do
+            {
+                try self.importCalendarInformation(calendar as! [String : AnyObject])
+            }
+            catch
+            {
+                
+            }
+        }
     }
     
     private func verify(lines: [String]) -> [String]

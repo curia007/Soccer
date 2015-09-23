@@ -104,6 +104,51 @@ public class EventProcessor: NSObject
             event.location = eventObject["LOCATION"] as? String
             event.notes = eventObject["SUMMARY"] as? String
             
+            // process start and end dates
+            let keys: [String] = eventObject.allKeys as! [String]
+            
+            var startDateString : String?
+            var startDateTimeZone: String?
+
+            var endDateString : String?
+            var endDateTimeZone: String?
+            
+            for key in keys
+            {
+                let components: [String] = key.componentsSeparatedByString(";")
+                
+                if (components[0] == "DTSTART")
+                {
+                    let zoneComponents: [String] = components[1].componentsSeparatedByString("=")
+                    startDateTimeZone = zoneComponents[1]
+                    startDateString = eventObject[key] as? String
+                }
+                else if (components[0] == "DTEND")
+                {
+                    let zoneComponents: [String] = components[1].componentsSeparatedByString("=")
+                    endDateTimeZone = zoneComponents[1]
+                    endDateString = eventObject[key] as? String
+                }
+            }
+            
+            let startDate: NSDate? = self.convert(startDateString!, timezone: startDateTimeZone!)
+            let endDate: NSDate? = self.convert(endDateString!, timezone: endDateTimeZone!)
+            
+            if (startDate == nil)
+            {
+                let error: NSError = NSError(domain: "Could not retrieve start date...", code: 0, userInfo: nil)
+                throw error
+            }
+ 
+            if (endDate == nil)
+            {
+                let error: NSError = NSError(domain: "Could not retrieve end date...", code: 0, userInfo: nil)
+                throw error
+            }
+
+            event.startDate = startDate!
+            event.endDate = endDate!
+            
             try self.eventStore.saveEvent(event, span: EKSpan.ThisEvent, commit: true)
 
         }
@@ -113,10 +158,18 @@ public class EventProcessor: NSObject
 
     // MARK: - private methods
     
-    private func convert(dataString: String) -> NSDate
+    private func convert(dateString: String, timezone: String) -> NSDate?
     {
+        let timezoneObject = NSTimeZone(name: timezone)
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
         
-        return NSDate()
+        // 20150902T180000
+        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+        dateFormatter.timeZone = timezoneObject
+        
+        let date: NSDate? = dateFormatter.dateFromString(dateString)
+        
+        return date
     }
     
     private func processCalendar(data: NSData, completionHandler: (() -> Void))

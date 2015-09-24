@@ -48,6 +48,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     {
         super.viewDidLoad()
         
+        // Retrieve user preferences
+        self.processUserSettings()
+
         // Do any additional setup after loading the view, typically from a nib.
         self.locationManager.delegate = self
         
@@ -127,7 +130,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
         NSNotificationCenter.defaultCenter().addObserverForName(NSUserDefaultsDidChangeNotification, object: nil, queue: self.operationQueue) { (notificaton) -> Void in
-            self.loadGameInformation()
+            
+            self.processUserSettings()
         }
     }
     
@@ -246,7 +250,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     private func loadGameInformation()
     {
-        self.processUserSettings()
         
         debugPrint("\(__FUNCTION__):  url: \(self.calendarURL)")
         

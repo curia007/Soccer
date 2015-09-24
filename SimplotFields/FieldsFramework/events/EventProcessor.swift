@@ -24,7 +24,7 @@ public class EventProcessor: NSObject
             {
                 if (granted == true)
                 {
-                    
+            
                     // Get the appropriate calendar
                     let calendar: NSCalendar? = NSCalendar.currentCalendar()
 
@@ -76,7 +76,7 @@ public class EventProcessor: NSObject
         
         for sourceObject in sources
         {
-            if (sourceObject.sourceType == EKSourceType.Subscribed)
+            if (sourceObject.sourceType == EKSourceType.CalDAV)
             {
                 source = sourceObject
                 isLocalSource = false

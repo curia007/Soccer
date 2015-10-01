@@ -1,10 +1,10 @@
 {
     "aps": {
         "alert": {
-            "body": "Test message",
-            "title": "Optional title"
+            "body": "New Match",
+            "title": "Boise Nationals"
         },
-        "category": "myCategory"
+        "category": "ClientNearNotificationCategory"
     },
     
     "WatchKit Simulator Actions": [

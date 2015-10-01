@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C02188201B97760200D6D854 /* FieldMapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881E1B97760200D6D854 /* FieldMapOverlayRenderer.swift */; };
 		C02188211B97760200D6D854 /* FieldMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021881F1B97760200D6D854 /* FieldMapOverlay.swift */; };
-		C02BCB801BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics in Resources */ = {isa = PBXBuildFile; fileRef = C02BCB7F1BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics */; settings = {ASSET_TAGS = (); }; };
-		C039557E1BB2FB8E007BD490 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C039557D1BB2FB8E007BD490 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		C02BCB801BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics in Resources */ = {isa = PBXBuildFile; fileRef = C02BCB7F1BB070CD00FCA377 /* ccb8a510-00b9-0133-6967-3c764e0595b0.ics */; };
+		C039557E1BB2FB8E007BD490 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C039557D1BB2FB8E007BD490 /* Settings.bundle */; };
 		C0784EC01B968F16006CD1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EBF1B968F16006CD1E5 /* AppDelegate.swift */; };
 		C0784EC21B968F16006CD1E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0784EC11B968F16006CD1E5 /* MapViewController.swift */; };
 		C0784EC51B968F16006CD1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0784EC31B968F16006CD1E5 /* Main.storyboard */; };
@@ -1072,8 +1072,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "../sdks/**";
@@ -1091,8 +1091,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SimplotFields/Info.plist;
@@ -1157,9 +1157,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = SoccerFields_Extension;
 				INFOPLIST_FILE = SoccerFields/Info.plist;
@@ -1177,9 +1177,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = SoccerFields_Extension;
 				INFOPLIST_FILE = SoccerFields/Info.plist;
@@ -1197,8 +1197,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				INFOPLIST_FILE = "SoccerFields Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp.watchkitextension;
@@ -1215,8 +1215,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				INFOPLIST_FILE = "SoccerFields Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carmelouria.SimplotFields.watchkitapp.watchkitextension;
@@ -1303,8 +1303,8 @@
 		C0AF098E1BA7C82D001A72AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				INFOPLIST_FILE = "Soccer Today/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1317,8 +1317,8 @@
 		C0AF098F1BA7C82D001A72AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Carmelo Uria (2MATBS2HZ9)";
 				INFOPLIST_FILE = "Soccer Today/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

@@ -109,14 +109,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         clientNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Default)
         
-        //clientNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal)
+        clientNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal)
         
         let jobNotifcationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-        clientNotifcationCategory.identifier = "BabysittingJobNotificationCategory"
+        clientNotifcationCategory.identifier = "NextMatchCategory"
         
         jobNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Default )
         
-        //jobNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal )
+        jobNotifcationCategory.setActions([acceptNotificationAction, declineNotificationAction], forContext:UIUserNotificationActionContext.Minimal )
         
         let categories:NSSet = NSSet(objects: clientNotifcationCategory, jobNotifcationCategory)
         
